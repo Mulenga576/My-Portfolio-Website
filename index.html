@@ -3,192 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mulenga's Internship Tracker</title>
+  <title>Internship Progress Tracker</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
+      background-color: #f5f5f5;
+      margin: 0;
       padding: 2rem;
-      background-color: #f9f9f9;
     }
-    h1, h2 {
-      color: #004080;
+    h1 {
+      text-align: center;
+      color: #003366;
+    }
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #003366;
+      margin-top: 2rem;
+    }
+    .log-container {
+      max-width: 900px;
+      margin: 0 auto;
     }
     .log-entry {
-      border-left: 4px solid #004080;
-      background: #ffffff;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      white-space: pre-wrap;
+      background-color: white;
+      border-left: 6px solid #003366;
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
-    .week {
-      margin-top: 2rem;
+    .log-entry strong {
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .log-entry ul {
+      padding-left: 1.2rem;
+    }
+    .log-entry ul li::marker {
+      content: "✔ ";
+      color: #28a745;
     }
     footer {
       text-align: center;
+      margin-top: 4rem;
       font-size: 0.9rem;
-      color: #888;
-      margin-top: 3rem;
-    }
-    code {
-      background: #eee;
-      padding: 0.5rem;
-      display: block;
-      overflow-x: auto;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <h1>Internship Progress Tracker</h1>
-  <p>Welcome! This site tracks my daily work and weekly goals during my internship at UWC Zambia.</p>
+  <div class="log-container">
+    <h1>Internship Progress Tracker</h1>
+    <p><strong>Welcome!</strong> This site tracks my daily work and weekly goals during my internship at UWC Zambia.</p>
 
-  <div class="week">
-    <h2>Phase 1: Planning & Setup (May 21–27)</h2>
+    <h2>Week 1: 21–23 May</h2>
+
     <div class="log-entry">
-      <strong>Day 1:</strong>
-      <p>Study existing website, gather alumni tab requirements</p>
+      <strong>21 May 2025</strong>
+      <ul>
+        <li>Setup GitHub repo</li>
+        <li>Finalised tools (VS Code, Git, Figma)</li>
+        <li>Reviewed project scope</li>
+      </ul>
     </div>
+
     <div class="log-entry">
-      <strong>Planning Code:</strong>
-      <code>
-def phase_1():
-    """
-    Week 1 Objectives:
-    - Understand project requirements
-    - Set up development environment
-    - Create initial designs
-    """
-    daily_tasks = {
-        "Day 1": "Study existing website, gather alumni tab requirements",
-        "Day 2": "Set up GitHub repo and development tools",
-        "Day 3": "Create database schema design",
-        "Day 4": "Design UI mockups (Figma)",
-        "Day 5": "Finalise tech stack decisions",
-        "Day 6": "Document project setup instructions",
-        "Day 7": "Plan Week 2 tasks"
-    }
-    return daily_tasks
-      </code>
+      <strong>22 May 2025</strong>
+      <p>To be updated…</p>
     </div>
-  </div>
 
-  <div class="week">
-    <h2>Phase 2: Development Roadmap</h2>
     <div class="log-entry">
-      <code>
-public class Phase2 {
-    public static void main(String[] args) {
-        String[] weeklyGoals = {
-            "Week 2: Implement database structure",
-            "Week 3: Develop core API endpoints",
-            "Week 4: Implement authentication system",
-            "Week 5: Alumni data management features"
-        };
-        
-        String dailyRoutine = """
-            Daily Flow (3 hours):
-            1. Hour 1: Database/API development
-            2. Hour 2: Testing and debugging
-            3. Hour 3: Documentation and commits
-            """;
-    }
-}
-      </code>
+      <strong>23 May 2025</strong>
+      <p>To be updated…</p>
     </div>
-  </div>
-
-  <div class="week">
-    <h2>Phase 3: AngularJS Implementation Plan</h2>
-    <div class="log-entry">
-      <code>
-angular.module('alumniTabPlan', [])
-  .controller('Phase3Ctrl', function() {
-    this.weeks = [
-      {
-        week: 6,
-        tasks: ['Set up AngularJS framework', 'Create base components']
-      },
-      {
-        week: 7, 
-        tasks: ['Implement UI templates', 'Connect to backend APIs']
-      },
-      {
-        week: 8,
-        tasks: ['Add interactive features', 'User testing prep']
-      }
-    ];
-
-    this.dailySchedule = `
-      2:00-2:15: Review previous work
-      2:15-3:15: Component development
-      3:15-3:30: Break
-      3:30-4:30: API integration
-      4:30-5:00: Testing & commits
-    `;
-  });
-      </code>
-    </div>
-  </div>
-
-  <div class="week">
-    <h2>Phase 4: Testing & Deployment</h2>
-    <div class="log-entry">
-      <code>
--- Testing Phase Plan
-CREATE TABLE testing_plan (
-    week INT PRIMARY KEY,
-    focus_area VARCHAR(100),
-    tasks TEXT[]
-);
-
-INSERT INTO testing_plan VALUES
-(9, 'Cross-browser Testing', ARRAY['Chrome', 'Firefox', 'Mobile']),
-(10, 'Performance Optimization', ARRAY['Load testing', 'Query optimization']);
-      </code>
-    </div>
-    <div class="log-entry">
-      <code>
-#!/bin/bash
-# Deployment Phase Plan
-
-echo "Week 11 Goals:"
-echo "1. Final integration testing"
-echo "2. Prepare deployment package"
-echo "3. Create user documentation"
-
-echo "Week 12 Goals:"
-echo "1. Deploy to staging environment"
-echo "2. Conduct final review"
-echo "3. Handoff to UWC team"
-      </code>
-    </div>
-  </div>
-
-  <div class="log-entry">
-    <strong>Daily Summary (Template):</strong>
-    <ul>
-      <li><strong>Hours Worked:</strong> 3</li>
-      <li><strong>Tasks Completed:</strong>
-        <ol>
-          <li></li>
-          <li></li>
-        </ol>
-      </li>
-      <li><strong>Challenges:</strong> - </li>
-      <li><strong>Next Steps:</strong>
-        <ol>
-          <li></li>
-          <li></li>
-        </ol>
-      </li>
-      <li><strong>GitHub Commits:</strong>
-        <ul>
-          <li>[Commit SHA]: Brief description</li>
-        </ul>
-      </li>
-    </ul>
   </div>
 
   <footer>
