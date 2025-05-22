@@ -21,6 +21,7 @@
       margin-bottom: 1rem;
       padding: 1rem;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      white-space: pre-wrap;
     }
     .week {
       margin-top: 2rem;
@@ -31,15 +32,27 @@
       color: #888;
       margin-top: 3rem;
     }
+    code {
+      background: #eee;
+      padding: 0.5rem;
+      display: block;
+      overflow-x: auto;
+    }
   </style>
 </head>
 <body>
   <h1>Internship Progress Tracker</h1>
   <p>Welcome! This site tracks my daily work and weekly goals during my internship at UWC Zambia.</p>
 
- 
-## Phase 1: Planning & Setup (May 21-27)
-```python
+  <div class="week">
+    <h2>Phase 1: Planning & Setup (May 21–27)</h2>
+    <div class="log-entry">
+      <strong>Day 1:</strong>
+      <p>Study existing website, gather alumni tab requirements</p>
+    </div>
+    <div class="log-entry">
+      <strong>Planning Code:</strong>
+      <code>
 def phase_1():
     """
     Week 1 Objectives:
@@ -57,6 +70,14 @@ def phase_1():
         "Day 7": "Plan Week 2 tasks"
     }
     return daily_tasks
+      </code>
+    </div>
+  </div>
+
+  <div class="week">
+    <h2>Phase 2: Development Roadmap</h2>
+    <div class="log-entry">
+      <code>
 public class Phase2 {
     public static void main(String[] args) {
         String[] weeklyGoals = {
@@ -74,7 +95,14 @@ public class Phase2 {
             """;
     }
 }
-  // AngularJS Implementation Plan
+      </code>
+    </div>
+  </div>
+
+  <div class="week">
+    <h2>Phase 3: AngularJS Implementation Plan</h2>
+    <div class="log-entry">
+      <code>
 angular.module('alumniTabPlan', [])
   .controller('Phase3Ctrl', function() {
     this.weeks = [
@@ -91,7 +119,7 @@ angular.module('alumniTabPlan', [])
         tasks: ['Add interactive features', 'User testing prep']
       }
     ];
-    
+
     this.dailySchedule = `
       2:00-2:15: Review previous work
       2:15-3:15: Component development
@@ -100,6 +128,14 @@ angular.module('alumniTabPlan', [])
       4:30-5:00: Testing & commits
     `;
   });
+      </code>
+    </div>
+  </div>
+
+  <div class="week">
+    <h2>Phase 4: Testing & Deployment</h2>
+    <div class="log-entry">
+      <code>
 -- Testing Phase Plan
 CREATE TABLE testing_plan (
     week INT PRIMARY KEY,
@@ -110,6 +146,10 @@ CREATE TABLE testing_plan (
 INSERT INTO testing_plan VALUES
 (9, 'Cross-browser Testing', ARRAY['Chrome', 'Firefox', 'Mobile']),
 (10, 'Performance Optimization', ARRAY['Load testing', 'Query optimization']);
+      </code>
+    </div>
+    <div class="log-entry">
+      <code>
 #!/bin/bash
 # Deployment Phase Plan
 
@@ -121,24 +161,36 @@ echo "3. Create user documentation"
 echo "Week 12 Goals:"
 echo "1. Deploy to staging environment"
 echo "2. Conduct final review"
-echo "3. Handoff to UWC team"  
+echo "3. Handoff to UWC team"
+      </code>
+    </div>
+  </div>
 
-### $(date +%Y-%m-%d)
+  <div class="log-entry">
+    <strong>Daily Summary (Template):</strong>
+    <ul>
+      <li><strong>Hours Worked:</strong> 3</li>
+      <li><strong>Tasks Completed:</strong>
+        <ol>
+          <li></li>
+          <li></li>
+        </ol>
+      </li>
+      <li><strong>Challenges:</strong> - </li>
+      <li><strong>Next Steps:</strong>
+        <ol>
+          <li></li>
+          <li></li>
+        </ol>
+      </li>
+      <li><strong>GitHub Commits:</strong>
+        <ul>
+          <li>[Commit SHA]: Brief description</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-**Hours Worked:** 3  
-**Tasks Completed:**
-1. 
-2. 
-
-**Challenges:**
-- 
-
-**Next Steps:**
-1. 
-2. 
-
-**GitHub Commits:**
-- [Commit SHA]: Brief description  
   <footer>
     Built by Mulenga Mpikula Silence | UWC Zambia Internship
   </footer>
