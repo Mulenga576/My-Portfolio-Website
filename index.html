@@ -4,110 +4,439 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Internship Progress Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <meta name="description" content="Track my internship journey at UWC Zambia with weekly progress updates and goals.">
 </head>
 <body>
-  <div class="log-container">
-    <h1>Internship Progress Tracker</h1>
-    <p><strong>Welcome!</strong> This site tracks my daily work and weekly goals during my internship at UWC Zambia.</p>
-
-    <h2>📘 Week 1: Learn HTML & CSS (3–6 June)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Completed introductory HTML modules (e.g. headings, lists, forms)</li>
-        <li>Learned CSS fundamentals: selectors, box model, layout</li>
-        <li>Practiced styling simple web pages</li>
-        <li>Explored responsive design basics and media queries</li>
-      </ul>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Internship Progress Tracker</h1>
+      <p>Welcome to my internship journey at UWC Zambia. Here I document my weekly progress, challenges, and achievements as I develop my skills in web development.</p>
     </div>
+  </header>
 
-    <h2>📅 Week 2: Planning & Setup (9–13 June)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Setup GitHub repository and VS Code workspace</li>
-        <li>Created progress tracker website and published via GitHub Pages</li>
-        <li>Reviewed internship role and deliverables</li>
-        <li>Started wireframe design of Alumni Tab using Figma</li>
-        <li>Explored UWC branding and UI style for consistency</li>
-        <li>Outlined key elements needed: alumni form, display cards, filters</li>
-        <li>Completed Figma layout and shared it for review</li>
-        <li>Made adjustments based on feedback from UWC team</li>
-        <li>Planned next week’s design refinement</li>
-      </ul>
-    </div>
+  <main class="log-container">
 
-    <h2>📌 Week 3: Finalise Designs (16–20 June)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Polish Figma wireframes based on feedback</li>
-        <li>Export visual assets if needed (icons, layout)</li>
-        <li>Break down designs into UI components for HTML/CSS</li>
-        <li>Create design-to-code implementation plan</li>
-      </ul>
-    </div>
+    <section class="week-section">
+      <div class="week-header">
+        <h2>📘 Week 1: Learn HTML & CSS (3–6 June)</h2>
+      </div>
+      <div class="week-days">
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Monday</h3>
+            <span class="day-date">June 3</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Introduction to HTML5 structure and elements</li>
+            <li>Basic HTML tags and attributes</li>
+            <li>Creating forms and input elements</li>
+            <li>Semantic HTML best practices</li>
+          </ul>
+        </div>
 
-    <h2>🧱 Week 4: Build Static Layout (23–27 June)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Create base HTML for alumni form and profile cards</li>
-        <li>Apply CSS styles and layout from Figma</li>
-        <li>Ensure mobile responsiveness</li>
-        <li>Commit first static layout to GitHub</li>
-      </ul>
-    </div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Tuesday</h3>
+            <span class="day-date">June 4</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Introduction to CSS selectors</li>
+            <li>Box model and layout fundamentals</li>
+            <li>Working with colors and typography</li>
+            <li>Basic responsive design concepts</li>
+          </ul>
+        </div>
 
-    <h2>⚙️ Week 5: Add Interactivity (30 June – 4 July)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Use JavaScript to handle form inputs and basic events</li>
-        <li>Test sample data interactions</li>
-        <li>Highlight and structure user experience feedback areas</li>
-      </ul>
-    </div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Wednesday</h3>
+            <span class="day-date">June 5</span>
+          </div>
+          <ul class="day-tasks">
+            <li>CSS Flexbox deep dive</li>
+            <li>Building responsive layouts</li>
+            <li>Media queries for different screen sizes</li>
+            <li>CSS Grid fundamentals</li>
+          </ul>
+        </div>
 
-    <h2>🗃️ Week 6: Database Design (7–11 July)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Design SQL or Firebase database schema</li>
-        <li>Map data from frontend to backend requirements</li>
-        <li>Set up test data and mock endpoints</li>
-      </ul>
-    </div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Thursday</h3>
+            <span class="day-date">June 6</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Advanced CSS Grid techniques</li>
+            <li>CSS variables and custom properties</li>
+            <li>Transitions and animations</li>
+            <li>Cross-browser compatibility</li>
+          </ul>
+        </div>
 
-    <h2>🔌 Week 7: Backend Integration (14–18 July)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Connect alumni form to backend storage</li>
-        <li>Enable new entries to appear dynamically</li>
-        <li>Implement data retrieval for listing alumni</li>
-      </ul>
-    </div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Friday</h3>
+            <span class="day-date">June 7</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Project: Build a responsive portfolio page</li>
+            <li>Code review and best practices</li>
+            <li>Performance optimization</li>
+            <li>Week 1 review and Q&A session</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2>🔍 Week 8: Filters and Search (21–25 July)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Implement filter by name, year, programme, etc.</li>
-        <li>Refactor display logic with filter state</li>
-        <li>Work on user-friendly search and UX polish</li>
-      </ul>
-    </div>
+    <section class="week-section">
+      <div class="week-header">
+        <h2>🚀 Week 2: Planning & Setup (10–14 June)</h2>
+      </div>
+      <div class="week-days">
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Monday</h3>
+            <span class="day-date">June 10</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Set up GitHub repository and VS Code environment</li>
+            <li>Initialize project with Git version control</li>
+            <li>Create basic file structure for the project</li>
+            <li>Research UWC branding guidelines</li>
+          </ul>
+        </div>
 
-    <h2>🧪 Week 9: Testing & Debugging (28 July – 1 August)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Cross-browser and mobile testing</li>
-        <li>Fix layout bugs and data handling issues</li>
-        <li>Begin collecting feedback from test users</li>
-      </ul>
-    </div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Tuesday</h3>
+            <span class="day-date">June 11</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Deploy initial version to GitHub Pages</li>
+            <li>Set up project documentation</li>
+            <li>Create README with project overview</li>
+            <li>Plan project structure and components</li>
+          </ul>
+        </div>
 
-    <h2>📈 Week 10: Performance Optimisation (4–8 August)</h2>
-    <div class="log-entry">
-      <ul>
-        <li>Improve load times and page speed</li>
-        <li>Optimise queries and reduce JS bloat</li>
-        <li>Minify CSS/JS if needed</li>
-      </ul>
-    </div>
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Wednesday</h3>
+            <span class="day-date">June 12</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Analyze project requirements in detail</li>
+            <li>Define user stories and acceptance criteria</li>
+            <li>Create initial wireframes in Figma</li>
+            <li>Set up design system foundations</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Thursday</h3>
+            <span class="day-date">June 13</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Design UI components in Figma</li>
+            <li>Create reusable component library</li>
+            <li>Define color scheme and typography</li>
+            <li>Prepare for design review</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Friday</h3>
+            <span class="day-date">June 14</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Conduct design review with UWC team</li>
+            <li>Incorporate feedback into designs</li>
+            <li>Finalize design system components</li>
+            <li>Plan development tasks for next week</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="week-section">
+      <div class="week-header">
+        <h2>✨ Week 3: Finalize Designs (17–21 June)</h2>
+      </div>
+      <div class="week-days">
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Monday</h3>
+            <span class="day-date">June 17</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Review and refine wireframe components</li>
+            <li>Add detailed interactions and micro-animations</li>
+            <li>Create responsive grid system for layouts</li>
+            <li>Document design decisions and patterns</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Tuesday</h3>
+            <span class="day-date">June 18</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Design form components and validation states</li>
+            <li>Create error and success message patterns</li>
+            <li>Design empty and loading states</li>
+            <li>Prepare component variants for development</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Wednesday</h3>
+            <span class="day-date">June 19</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Export and optimize SVG icons and assets</li>
+            <li>Create design tokens for colors and typography</li>
+            <li>Prepare asset library for developers</li>
+            <li>Document icon usage guidelines</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Thursday</h3>
+            <span class="day-date">June 20</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Finalize design system documentation</li>
+            <li>Create implementation checklist</li>
+            <li>Prepare handoff materials for developers</li>
+            <li>Conduct design review with stakeholders</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Friday</h3>
+            <span class="day-date">June 21</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Address final feedback on designs</li>
+            <li>Create development roadmap</li>
+            <li>Set up project management board</li>
+            <li>Plan development sprints</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="week-section">
+      <div class="week-header">
+        <h2>🧱 Week 4: Build Static Layout (24–28 June)</h2>
+      </div>
+      <div class="week-days">
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Monday</h3>
+            <span class="day-date">June 24</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Set up project structure and file organization</li>
+            <li>Create base HTML templates</li>
+            <li>Implement responsive navigation</li>
+            <li>Set up CSS architecture (BEM methodology)</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Tuesday</h3>
+            <span class="day-date">June 25</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Implement header and footer components</li>
+            <li>Create responsive hero section</li>
+            <li>Style typography and base elements</li>
+            <li>Ensure accessibility standards (ARIA, contrast ratios)</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Wednesday</h3>
+            <span class="day-date">June 26</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Build card components and content sections</li>
+            <li>Implement responsive grid layouts</li>
+            <li>Style form elements and buttons</li>
+            <li>Test on different viewport sizes</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Thursday</h3>
+            <span class="day-date">June 27</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Add hover and focus states</li>
+            <li>Implement loading states and animations</li>
+            <li>Optimize images and assets</li>
+            <li>Cross-browser testing and fixes</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Friday</h3>
+            <span class="day-date">June 28</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Performance optimization</li>
+            <li>Accessibility audit and fixes</li>
+            <li>Document CSS architecture</li>
+            <li>Code review and cleanup</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="week-section">
+      <div class="week-header">
+        <h2>⚡ Week 5: Add Interactivity (1–5 July)</h2>
+      </div>
+      <div class="week-days">
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Monday</h3>
+            <span class="day-date">July 1</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Set up JavaScript project structure</li>
+            <li>Implement DOM manipulation utilities</li>
+            <li>Create event handling system</li>
+            <li>Set up module bundler (if needed)</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Tuesday</h3>
+            <span class="day-date">July 2</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Implement form validation logic</li>
+            <li>Create dynamic error messages</li>
+            <li>Add input masking and formatting</li>
+            <li>Test form submission handling</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Wednesday</h3>
+            <span class="day-date">July 3</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Build interactive UI components</li>
+            <li>Implement dropdown menus and modals</li>
+            <li>Add smooth scrolling</li>
+            <li>Create tabbed interfaces</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Thursday</h3>
+            <span class="day-date">July 4</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Add loading states and spinners</li>
+            <li>Implement client-side form submission</li>
+            <li>Create success/error feedback</li>
+            <li>Add keyboard navigation</li>
+          </ul>
+        </div>
+
+        <div class="day-card">
+          <div class="day-header">
+            <h3 class="day-name">Friday</h3>
+            <span class="day-date">July 5</span>
+          </div>
+          <ul class="day-tasks">
+            <li>Optimize JavaScript performance</li>
+            <li>Add animation transitions</li>
+            <li>Test across different browsers</li>
+            <li>Document JavaScript code</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="week-section">
+      <h2>🗃️ Week 6: Database Design (7–11 July)</h2>
+      <div class="log-entry">
+        <ul>
+          <li><strong>Designed</strong> scalable database schema</li>
+          <li><strong>Established</strong> data models and relationships</li>
+          <li><strong>Created</strong> API endpoints and documentation</li>
+          <li><strong>Implemented</strong> data validation and sanitization</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="week-section">
+      <h2>🔌 Week 7: Backend Integration (14–18 July)</h2>
+      <div class="log-entry">
+        <ul>
+          <li><strong>Connected</strong> frontend to backend services</li>
+          <li><strong>Implemented</strong> real-time data synchronization</li>
+          <li><strong>Developed</strong> secure authentication system</li>
+          <li><strong>Optimized</strong> API performance and error handling</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="week-section">
+      <h2>🔍 Week 8: Filters and Search (21–25 July)</h2>
+      <div class="log-entry">
+        <ul>
+          <li><strong>Developed</strong> advanced search functionality</li>
+          <li><strong>Implemented</strong> dynamic filtering system</li>
+          <li><strong>Enhanced</strong> UI with loading states and feedback</li>
+          <li><strong>Conducted</strong> usability testing and refinements</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="week-section">
+      <h2>🧪 Week 9: Testing & Debugging (28 July – 1 August)</h2>
+      <div class="log-entry">
+        <ul>
+          <li><strong>Performed</strong> comprehensive cross-browser testing</li>
+          <li><strong>Identified</strong> and resolved critical bugs</li>
+          <li><strong>Gathered</strong> and analyzed user feedback</li>
+          <li><strong>Optimized</strong> performance and accessibility</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="week-section">
+      <h2>🚀 Week 10: Final Polish & Launch (4–8 August)</h2>
+      <div class="log-entry">
+        <ul>
+          <li><strong>Implemented</strong> final design refinements</li>
+          <li><strong>Optimized</strong> for maximum performance</li>
+          <li><strong>Prepared</strong> comprehensive documentation</li>
+          <li><strong>Successfully</strong> deployed to production</li>
+        </ul>
+      </div>
+    </section>
 
     <h2>🧩 Week 11: Polish UI and Content (11–15 August)</h2>
     <div class="log-entry">
@@ -134,6 +463,7 @@
   <footer>
     Built by Mulenga Mpikula Silence | UWC Zambia Internship
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
   
