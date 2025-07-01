@@ -1,18 +1,60 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-  // Add smooth scrolling to all anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  // Smooth scroll function
+  const smoothScroll = (targetId, offset = 0) => {
+    const target = document.querySelector(targetId);
+    if (target) {
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Handle Explore My Journey button click
+  const beginJourneyBtn = document.getElementById('begin-journey');
+  if (beginJourneyBtn) {
+    // Store the current state in a data attribute
+    beginJourneyBtn.setAttribute('data-visible', 'true');
+    
+    beginJourneyBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+      const weekSections = document.querySelectorAll('.week-section');
+      const isVisible = beginJourneyBtn.getAttribute('data-visible') === 'true';
+      
+      // Toggle visibility with animation
+      weekSections.forEach((section, index) => {
+        if (isVisible) {
+          // Add hidden class to trigger fade out
+          section.classList.add('hidden');
+        } else {
+          // Remove hidden class to trigger fade in
+          section.classList.remove('hidden');
+          
+          // Scroll to first section when showing
+          if (index === 0) {
+            smoothScroll('#week-1', 80);
+          }
+        }
+      });
+      
+      // Update button text and state
+      beginJourneyBtn.textContent = isVisible ? 'Show Journey' : 'Hide Journey';
+      beginJourneyBtn.setAttribute('data-visible', String(!isVisible));
     });
-  });
+  }
+
+  // Handle Get in Touch button click
+  const contactBtn = document.getElementById('contact-btn');
+  if (contactBtn) {
+    contactBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      smoothScroll('#contact-section');
+    });
+  }
 
   // Set up intersection observer for scroll animations
   const observerOptions = {
