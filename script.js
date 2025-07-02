@@ -1,18 +1,129 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scroll function
-  const smoothScroll = (targetId, offset = 0) => {
-    const target = document.querySelector(targetId);
-    if (target) {
-      const elementPosition = target.getBoundingClientRect().top;
+    // Function to handle smooth scrolling
+  function scrollToSection(selector, offset = 80) {
+    const element = document.querySelector(selector);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
     }
-  };
+  }
+
+  // Handle navigation link clicks
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      e.preventDefault();
+      
+      // Close mobile menu if open
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        document.querySelector('.hamburger').classList.remove('active');
+      }
+      
+      // Scroll to the section
+      scrollToSection(targetId);
+      
+      // Update URL
+      history.pushState(null, null, targetId);
+    });
+  });
+  
+  // Creative Back to Top Button
+  const backToTopBtn = document.createElement('div');
+  backToTopBtn.className = 'back-to-top';
+  backToTopBtn.setAttribute('aria-label', 'Back to top');
+  backToTopBtn.setAttribute('role', 'button');
+  backToTopBtn.tabIndex = 0;
+  
+  // Add creative content to the button
+  backToTopBtn.innerHTML = `
+    <div class="back-to-top-arrow">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+    <div class="back-to-top-text">Back to Top</div>
+    <div class="back-to-top-particles"></div>
+  `;
+  
+  document.body.appendChild(backToTopBtn);
+  
+  // Show/hide back to top button with animation
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Show/hide based on scroll position
+    if (scrollTop > 300) {
+      backToTopBtn.classList.add('show');
+      
+      // Add direction-based animation
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        backToTopBtn.classList.add('scrolling-down');
+        backToTopBtn.classList.remove('scrolling-up');
+      } else {
+        // Scrolling up
+        backToTopBtn.classList.add('scrolling-up');
+        backToTopBtn.classList.remove('scrolling-down');
+      }
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+    
+    lastScrollTop = scrollTop;
+    
+    // Add progress indicator
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = (scrollTop / scrollHeight) * 100;
+    backToTopBtn.style.setProperty('--scroll-progress', `${scrollProgress}%`);
+  });
+  
+  // Back to top functionality with animation
+  function scrollToTop() {
+    backToTopBtn.classList.add('clicked');
+    
+    // Add particles animation
+    createParticles(backToTopBtn);
+    
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
+    // Reset animation after click
+    setTimeout(() => {
+      backToTopBtn.classList.remove('clicked');
+    }, 1000);
+  }
+  
+  // Click and keypress events
+  backToTopBtn.addEventListener('click', scrollToTop);
+  backToTopBtn.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollToTop();
+    }
+  });
+  
+  // Create particles effect
+  function createParticles(button) {
+    const particles = document.createElement('div');
+    particles.className = 'particles';
+    button.querySelector('.back-to-top-particles').appendChild(particles);
+    
+    // Remove particles after animation
+    setTimeout(() => {
+      particles.remove();
+    }, 1000);
+  }
 
   // Handle Explore My Journey button click
   const beginJourneyBtn = document.getElementById('begin-journey');
