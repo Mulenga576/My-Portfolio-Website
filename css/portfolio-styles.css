@@ -1588,11 +1588,6 @@ body {
   gap: 0.5rem;
 }
 
-.education-item .date::before {
-  content: '📅';
-  font-size: 1rem;
-}
-
 .skills-preview {
   display: grid;
   gap: 2rem;
@@ -2967,6 +2962,58 @@ body {
 .form-group textarea {
   resize: vertical;
   min-height: 150px;
+}
+
+/* Form Messages */
+#formMessage {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+#formMessage.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#formMessage.success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #34d399;
+}
+
+#formMessage.error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #f87171;
+}
+
+/* Loading Spinner */
+.btn-loader {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Disabled button state */
+.btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
 }
 
 /* Footer */
