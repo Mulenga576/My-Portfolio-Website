@@ -8,6 +8,7 @@
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <!-- Navigation -->
@@ -17,9 +18,9 @@
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#skills" class="nav-link" data-scroll="skills">Skills</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#portfolio">My Work</a></li>
-        <li><a href="#portfolio" class="nav-link" data-scroll="portfolio">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger">
@@ -44,8 +45,7 @@
         </h1>
         <div class="name-underline"></div>
       </div>
-      <div class="hero-description">
-      </div>
+
       <h2 class="typing-text">
         <span id="typed"></span><span class="cursor"></span>
       </h2>
@@ -429,9 +429,6 @@
             <i class="fas fa-users-gear"></i>
           </div>
           <div class="card-content">
-            <div class="expertise-icon">
-              <i class="fas fa-users-gear"></i>
-            </div>
             <h3>Technical Leadership</h3>
             <p>Guiding teams to deliver high-quality technical solutions.</p>
             <ul class="expertise-highlights">
@@ -447,17 +444,23 @@
     </div>
   </section>
 
-  <!-- Other Experiences Section -->
-  <section id="experiences" class="section bg-light">
+  <!-- Projects Section -->
+  <section id="projects" class="section bg-light">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Showcasing my analytical and technical expertise through real-world projects</p>
+      <div class="section-header text-center">
+        <span class="section-subtitle">MY PORTFOLIO</span>
+        <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+        <div class="section-divider">
+          <span></span>
+          <i class="fas fa-code-branch"></i>
+          <span></span>
+        </div>
+        <p class="section-description">Showcasing innovative solutions and technical expertise through real-world applications</p>
       </div>
       
       <div class="experiences-grid">
         <!-- Project 1 -->
-        <div class="experience-card finance">
+        <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
           <div class="experience-image">
             <div class="experience-overlay"></div>
             <div class="experience-icon">
@@ -469,78 +472,78 @@
               <h3>Financial Market Analysis</h3>
               <span class="experience-category">Data Science</span>
             </div>
-            <p class="experience-description">Conducted comprehensive analysis of financial markets using Python, identifying key trends and investment opportunities through advanced data visualization techniques.</p>
+            <p class="experience-description">Conducted comprehensive analysis of financial markets using Python, identifying key trends and investment opportunities through advanced data visualization techniques and machine learning models.</p>
             <div class="experience-footer">
               <ul class="experience-tech">
                 <li><i class="fab fa-python"></i> Python</li>
                 <li><i class="fas fa-database"></i> Pandas</li>
                 <li><i class="fas fa-chart-bar"></i> Matplotlib</li>
                 <li><i class="fas fa-project-diagram"></i> NumPy</li>
+                <li><i class="fas fa-brain"></i> Scikit-learn</li>
               </ul>
-              <div class="experience-actions">
-                <a href="#" class="btn btn-outline" target="_blank" rel="noopener">
-                  <i class="fas fa-external-link-alt"></i> View Project
-                </a>
+              <div class="experience-links">
+                <a href="#" class="experience-link" aria-label="View Project" data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="experience-link" aria-label="View Code" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="experience-card web-dev">
+        <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
           <div class="experience-image">
             <div class="experience-overlay"></div>
             <div class="experience-icon">
-              <i class="fas fa-code"></i>
+              <i class="fas fa-laptop-code"></i>
             </div>
           </div>
           <div class="experience-content">
             <div class="experience-header">
-              <h3>Web Application Development</h3>
-              <span class="experience-category">Full Stack</span>
+              <h3>E-commerce Platform</h3>
+              <span class="experience-category">Web Development</span>
             </div>
-            <p class="experience-description">Developed a responsive web application with modern JavaScript frameworks, implementing RESTful APIs and real-time data processing.</p>
+            <p class="experience-description">Developed a full-stack e-commerce platform with user authentication, real-time inventory management, and secure payment processing using modern web technologies.</p>
             <div class="experience-footer">
               <ul class="experience-tech">
                 <li><i class="fab fa-react"></i> React</li>
                 <li><i class="fab fa-node-js"></i> Node.js</li>
                 <li><i class="fas fa-database"></i> MongoDB</li>
-                <li><i class="fab fa-css3-alt"></i> Tailwind CSS</li>
+                <li><i class="fas fa-bolt"></i> Express</li>
+                <li><i class="fas fa-credit-card"></i> Stripe</li>
               </ul>
-              <div class="experience-actions">
-                <a href="#" class="btn btn-outline" target="_blank" rel="noopener">
-                  <i class="fas fa-external-link-alt"></i> View Project
-                </a>
+              <div class="experience-links">
+                <a href="#" class="experience-link" aria-label="View Project" data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="experience-link" aria-label="View Code" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Project 3 -->
-        <div class="experience-card ml">
+        <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
           <div class="experience-image">
             <div class="experience-overlay"></div>
             <div class="experience-icon">
-              <i class="fas fa-robot"></i>
+              <i class="fas fa-mobile-alt"></i>
             </div>
           </div>
           <div class="experience-content">
             <div class="experience-header">
-              <h3>Machine Learning Model</h3>
-              <span class="experience-category">AI/ML</span>
+              <h3>Fitness Tracker App</h3>
+              <span class="experience-category">Mobile Development</span>
             </div>
-            <p class="experience-description">Built and trained a predictive model using TensorFlow and scikit-learn, achieving 95% accuracy in classification tasks with proper data preprocessing.</p>
+            <p class="experience-description">Created a cross-platform fitness tracking application with personalized workout plans, progress analytics, and integration with health devices.</p>
             <div class="experience-footer">
               <ul class="experience-tech">
-                <li><i class="fas fa-brain"></i> TensorFlow</li>
-                <li><i class="fas fa-robot"></i> scikit-learn</li>
-                <li><i class="fas fa-chart-line"></i> Matplotlib</li>
-                <li><i class="fab fa-python"></i> Python</li>
+                <li><i class="fab fa-react"></i> React Native</li>
+                <li><i class="fas fa-fire"></i> Firebase</li>
+                <li><i class="fas fa-chart-line"></i> Recharts</li>
+                <li><i class="fas fa-heartbeat"></i> HealthKit</li>
+                <li><i class="fas fa-database"></i> SQLite</li>
               </ul>
-              <div class="experience-actions">
-                <a href="#" class="btn btn-outline" target="_blank" rel="noopener">
-                  <i class="fas fa-external-link-alt"></i> View Project
-                </a>
+              <div class="experience-links">
+                <a href="#" class="experience-link" aria-label="View Project" data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#" class="experience-link" aria-label="View Code" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
               </div>
             </div>
           </div>
@@ -619,9 +622,9 @@
             <h3>Internship Tracker</h3>
             <p>Developed a Website to track internship applications, interviews, and progress.</p>
             <div class="portfolio-tags">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>MongoDB</span>
+              <span>html</span>
+              <span>css</span>
+              <span>js</span>
             </div>
           </div>
         </div>
@@ -867,9 +870,86 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/script.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="portfolio-clean.js"></script>
   <script src="js/performance.js" defer></script>
   <script src="js/cv-download.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+      mirror: false
+    });
+
+    // Initialize carousels when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousels = document.querySelectorAll('.carousel');
+      
+      carousels.forEach(carousel => {
+        const items = carousel.querySelectorAll('.carousel-item');
+        const dots = carousel.querySelectorAll('.dot');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+          items.forEach((item, i) => {
+            item.classList.toggle('active', i === index);
+          });
+          
+          if (dots.length > 0) {
+            dots.forEach((dot, i) => {
+              dot.classList.toggle('active', i === index);
+            });
+          }
+        }
+
+        // Next button
+        const nextBtn = carousel.querySelector('.carousel-next');
+        if (nextBtn) {
+          nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            showSlide(currentIndex);
+          });
+        }
+
+        // Previous button
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        if (prevBtn) {
+          prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            showSlide(currentIndex);
+          });
+        }
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            currentIndex = index;
+            showSlide(currentIndex);
+          });
+        });
+
+        // Auto-advance slides
+        let slideInterval = setInterval(() => {
+          currentIndex = (currentIndex + 1) % items.length;
+          showSlide(currentIndex);
+        }, 5000);
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => {
+          clearInterval(slideInterval);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+          slideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % items.length;
+            showSlide(currentIndex);
+          }, 5000);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
