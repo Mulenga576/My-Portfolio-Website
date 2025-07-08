@@ -11,29 +11,50 @@
 
 /* Base Styles */
 :root {
-  --primary: #6c63ff;
-  --secondary: #5a50e5;
-  --primary-light: #8a85ff;
-  --primary-dark: #4a42cc;
-  --dark: #1a1a2e;
-  --light: #f8f9ffa3;
-  --accent: #ff6b6b;
-  --accent-light: #ff8e8e;
-  --accent-dark: #ff4757;
-  --gray-100: #f1f5f9be;
-  --gray-200: #e2e8f086;
-  --gray-300: #cbd5e1ca;
-  --gray-400: #94a3b8;
-  --gray-500: #64748b;
-  --gray-600: #475569;
-  --gray-700: #334155;
-  --gray-800: #1e293b;
-  --gray-900: #0f172a;
+  --primary: #2b6cb0;
+  --primary-dark: #2c5282;
+  --primary-light: #4299e1;
+  --secondary: #38b2ac;
+  --accent: #4fd1c5;
+  --dark: #1a202c;
+  --light: #ffffff;
+  --gray-100: #f7fafc;
+  --gray-200: #edf2f7;
+  --gray-300: #e2e8f0;
+  --gray-400: #cbd5e0;
+  --gray-500: #a0aec0;
+  --gray-600: #718096;
+  --gray-700: #4a5568;
+  --gray-800: #2d3748;
+  --gray-900: #1a202c;
+  --success: #38a169;
+  --info: #3182ce;
+  --warning: #dd6b20;
+  --danger: #e53e3e;
+  --light: #f7fafc;
+  --dark: #1a202c;
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Fira Code', 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  --shadow-none: 0 0 #0000;
   --transition: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  --transition-fast: all 0.15s ease;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  --border-radius-2xl: 1.5rem;
+  --border-radius-full: 9999px;
 }
 
 * {
@@ -188,10 +209,10 @@ html {
 
 /* Creative Back to Top Button */
 .back-to-top {
-  --primary-color: #6c5ce7;
-  --secondary-color: #a29bfe;
+  --primary-color: #2b6cb0;
+  --secondary-color: #4299e1;
   --text-color: #fff;
-  --shadow-color: rgba(108, 92, 231, 0.3);
+  --shadow-color: rgba(43, 108, 176, 0.3);
   --scroll-progress: 0%;
   
   position: fixed;
@@ -382,7 +403,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--gray-700);
-  background-color: #f8fafc;
+  background-color: #f8f9fa;
   overflow-x: hidden;
 }
 
@@ -400,12 +421,12 @@ body {
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--gray-900);
+  margin: 0 auto 1rem;
+  color: white;
+  text-align: center;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  width: 100%;
 }
 
 .section-title.about-title {
@@ -1056,7 +1077,7 @@ body {
 
 .what-i-offer .skill-card:hover .skill-logo {
   transform: scale(1.1);
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
 .what-i-offer .skill-card:hover .skill-logo i {
@@ -1457,10 +1478,38 @@ body {
 
 .about-title {
   font-size: 3.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
-  color: white;
+  color: #e0e0ff; /* Light blue tint for better visibility */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-title .text-gradient {
+  margin-left: 0.5rem;
+  display: inline-block;
+  background: linear-gradient(135deg, #00d4ff 0%, #6a11cb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.about-title .text-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00d4ff, #6a11cb);
+  border-radius: 3px;
+  z-index: -1;
+  opacity: 0.7;
 }
 
 .text-gradient {
@@ -1714,6 +1763,324 @@ body {
 }
 
 /* Skills Section */
+.dark-section {
+  background-color: #0a0e17;
+  color: #fff;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.skills-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 20%, rgba(67, 198, 172, 0.1) 0%, rgba(106, 17, 203, 0.1) 90%);
+  z-index: 0;
+}
+
+.skills-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.skills-category {
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.category-title {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0.75rem 0 0.5rem;
+  position: relative;
+  padding-bottom: 0.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 3px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.skill-card {
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  height: 100%;
+  min-height: 350px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.skill-card.active .skill-card-inner {
+  transform: rotateY(180deg) !important;
+}
+
+.skill-card-front,
+.skill-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  padding: 2.5rem 2rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  margin: 0;
+  border: none;
+}
+
+/* Debug styles - will help us see if the elements are being targeted */
+.skill-card[data-skill] .skill-card-back {
+  /* Add a fallback color in case the image doesn't load */
+  background-color: #2c3e50;
+  /* Ensure the element has dimensions */
+  min-height: 300px;
+  /* Add border to help with debugging */
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Web Development Card */
+.skill-card[data-skill="web"] .skill-card-back {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('portfolio images/van-tay-media--S2-AKdWQoQ-unsplash.jpg') no-repeat center center/cover;
+}
+
+/* Data Science Card */
+.skill-card[data-skill="data"] .skill-card-back {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('portfolio images/luke-chesser-JKUTrJ4vK00-unsplash.jpg') no-repeat center center/cover;
+}
+
+/* Math Enthusiast Card */
+.skill-card[data-skill="math"] .skill-card-back {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('portfolio images/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg') no-repeat center center/cover;
+}
+
+/* Finance Analyst Card */
+.skill-card[data-skill="finance"] .skill-card-back {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('portfolio images/kevin-matos-Nl_FMFpXo2g-unsplash.jpg') no-repeat center center/cover;
+}
+
+.skill-card-back {
+  transform: rotateY(180deg) !important;
+  overflow-y: auto !important;
+  text-align: left;
+  padding: 2rem;
+}
+
+.skill-card-back h3 {
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.skill-details h4 {
+  color: var(--gray-800);
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.skill-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.skill-details li {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--gray-600);
+  transition: all 0.3s ease;
+}
+
+.skill-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-light);
+  background: rgba(66, 153, 225, 0.1);
+}
+
+.skill-icon {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  filter: brightness(1.1);
+}
+
+.skill-name {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #e0e0ff;
+  margin-top: 0.1rem;
+  text-align: center;
+  width: 100%;
+  line-height: 1.1;
+  opacity: 0.9;
+}
+
+/* Skill-specific colors */
+.skill-item[data-skill="html"] .skill-icon { color: #E44D26; }
+.skill-item[data-skill="css"] .skill-icon { color: #264DE4; }
+.skill-item[data-skill="javascript"] .skill-icon { color: #F7DF1E; }
+.skill-item[data-skill="react"] .skill-icon { color: #61DAFB; }
+.skill-item[data-skill="nodejs"] .skill-icon { color: #68A063; }
+.skill-item[data-skill="express"] .skill-icon { color: #000000; }
+.skill-item[data-skill="mongodb"] .skill-icon { color: #47A248; }
+.skill-item[data-skill="mysql"] .skill-icon { color: #4479A1; }
+.skill-item[data-skill="python"] .skill-icon { color: #3776AB; }
+.skill-item[data-skill="r-project"] .skill-icon { color: #276DC3; }
+.skill-item[data-skill="git"] .skill-icon { color: #F05032; }
+.skill-item[data-skill="github"] .skill-icon { color: #181717; }
+.skill-item[data-skill="docker"] .skill-icon { color: #2496ED; }
+.skill-item[data-skill="aws"] .skill-icon { color: #FF9900; }
+.skill-item[data-skill="figma"] .skill-icon { color: #F24E1E; }
+.skill-item[data-skill="adobe-xd"] .skill-icon { color: #FF61F6; }
+.skill-item[data-skill="photoshop"] .skill-icon { color: #31A8FF; }
+.skill-item[data-skill="illustrator"] .skill-icon { color: #FF9A00; }
+.skill-item[data-skill="excel"] .skill-icon { color: #217346; }
+.skill-item[data-skill="word"] .skill-icon { color: #2B579A; }
+.skill-item[data-skill="powerpoint"] .skill-icon { color: #D24726; }
+.skill-item[data-skill="outlook"] .skill-icon { color: #0078D4; }
+.skill-item[data-skill="teams"] .skill-icon { color: #6264A7; }
+.skill-item[data-skill="tableau"] .skill-icon { color: #E97627; }
+.skill-item[data-skill="powerbi"] .skill-icon { color: #F2C811; }
+.skill-item[data-skill="pandas"] .skill-icon { color: #150458; }
+.skill-item[data-skill="numpy"] .skill-icon { color: #013243; }
+.skill-item[data-skill="tensorflow"] .skill-icon { color: #FF6F00; }
+.skill-item[data-skill="vscode"] .skill-icon { color: #007ACC; }
+.skill-item[data-skill="postman"] .skill-icon { color: #FF6C37; }
+.skill-item[data-skill="slack"] .skill-icon { color: #4A154B; }
+.skill-item[data-skill="trello"] .skill-icon { color: #0052CC; }
+
+/* Quantitative Analysis specific styling */
+.skill-item[data-skill="quant"] .skill-icon {
+  color: #4CAF50; /* Green color for finance/analysis */
+  font-size: 1.3rem; /* Slightly larger icon */
+}
+
+.skill-item[data-skill="quant"]:hover .skill-icon {
+  color: #388E3C; /* Darker green on hover */
+  transform: scale(1.3); /* More pronounced scale on hover */
+}
+
+.skill-item[data-skill="quant"] {
+  background: rgba(76, 175, 80, 0.1); /* Subtle background */
+  border-color: rgba(76, 175, 80, 0.3); /* Matching border */
+}
+
+.skill-item[data-skill="quant"]:hover {
+  background: rgba(76, 175, 80, 0.15);
+  border-color: rgba(76, 175, 80, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skill-item {
+    padding: 1rem 0.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+  }
+  
+  .skill-name {
+    font-size: 0.85rem;
+  }
+}
+
 .skills-section {
   padding: 3rem 0;
 }
@@ -2384,8 +2751,9 @@ body {
 
 .portfolio-img {
   position: relative;
+  width: 100%;
+  height: 250px;
   overflow: hidden;
-  padding-top: 75%; /* 4:3 aspect ratio */
 }
 
 /* Carousel Styles */
@@ -2525,31 +2893,33 @@ body {
 }
 
 .portfolio-content h3 {
-  margin: 0 0 0.5rem 0;
   font-size: 1.3rem;
-  color: var(--gray-800);
+  margin-bottom: 0.75rem;
+  transform: translateY(20px);
+  transition: var(--transition);
+  transition-delay: 0.1s;
 }
 
 .portfolio-content p {
-  color: var(--gray-600);
-  margin: 0 0 1rem 0;
-  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+  transition-delay: 0.2s;
 }
 
-.portfolio-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: auto;
+.portfolio-overlay .btn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+  transition-delay: 0.3s;
 }
 
-.portfolio-tags span {
-  background: var(--primary-light);
-  color: var(--primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
+.portfolio-item:hover .portfolio-overlay h3,
+.portfolio-item:hover .portfolio-overlay p,
+.portfolio-item:hover .portfolio-overlay .btn {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Portfolio Filter Buttons */
@@ -2576,7 +2946,9 @@ body {
   background: var(--primary);
   color: white;
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(43, 108, 176, 0.3);
 }
+
 .portfolio-filter {
   display: flex;
   justify-content: center;
