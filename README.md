@@ -1,23 +1,26 @@
 # Mulenga Mpikula Silence - Portfolio Website
 
-Welcome to my professional portfolio website! This single-page application showcases my skills, projects, and experience in a clean, modern, and responsive design.
+A modern portfolio website built with Next.js, TypeScript, Tailwind CSS, and Supabase, showcasing my skills, projects, and professional experience.
 
-## 🌟 Features
+## ✨ Features
 
-- **Responsive Design**: Looks great on all devices
-- **Modern UI/UX**: Clean and professional interface with smooth animations
-- **Project Showcase**: Highlighted projects with detailed descriptions
-- **Contact Form**: Integrated with Firebase for message collection
-- **Performance Optimized**: Fast loading times and smooth interactions
-- **SEO Friendly**: Ready for search engines to index
+- 🚀 Blazing fast performance with Next.js 14
+- 🎨 Beautiful UI with Tailwind CSS
+- 📱 Fully responsive design
+- 📝 Contact form with Supabase backend
+- 🔍 SEO optimized
+- 🔄 Real-time updates
+- 🔒 Secure authentication (if enabled)
+- ⚡ Performance optimized
+- 🎨 Smooth animations and transitions
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or later)
+- Node.js 18.x or later
 - npm or yarn
-- Firebase account (for the contact form)
+- Supabase account (for the backend)
 
 ### Installation
 

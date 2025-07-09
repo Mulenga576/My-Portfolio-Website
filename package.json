@@ -1,24 +1,38 @@
 {
   "name": "portfolio-website",
-  "version": "1.0.0",
-  "description": "Portfolio website with Supabase backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portfolio website with Next.js and Supabase",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
-    "build": "tsc",
-    "start": "node test-supabase.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.50.3",
-    "dotenv": "^16.0.3"
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.39.0",
+    "next": "14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.19.6",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.21",
+    "dotenv": "^17.1.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.2",
+    "typescript": "^5.3.3",
     "vite": "^4.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
