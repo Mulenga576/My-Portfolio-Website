@@ -70,7 +70,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (data && data[0]) {
           try {
             console.log('Sending email notification...');
-            const emailResponse = await supabase.functions.invoke('send-contact-email', {
+            const SUPABASE_URL = 'https://gsebyixbhynqxxwhvgic.supabase.co';
+            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzZWJ5aXhiaHlucXh4d2h2Z2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1OTg4NDIsImV4cCI6MjA2NzE3NDg0Mn0.cnahkQqw85AVhOcmbOK_Sl743QphShRQ60tKo9zOFPw';
+            
+            const emailResponse = await fetch(`${SUPABASE_URL}/functions/v1/send-contact-email`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+              },
               body: JSON.stringify({
                 submission_id: data[0].id,
                 name: formData.name,
@@ -80,7 +88,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 to_email: 'smpikula@u.rochester.edu'
               })
             });
-            console.log('Email notification response:', emailResponse);
+            
+            const result = await emailResponse.json();
+            console.log('Email notification response:', result);
           } catch (emailError) {
             console.error('Error sending email notification:', emailError);
             // Continue even if email fails
