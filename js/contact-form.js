@@ -66,35 +66,36 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         console.log('Form submitted successfully:', data);
         
-        // Send email notification if submission was successful
+        // Show success message
         if (data && data[0]) {
-          try {
-            console.log('Sending email notification...');
-            const SUPABASE_URL = 'https://gsebyixbhynqxxwhvgic.supabase.co';
-            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzZWJ5aXhiaHlucXh4d2h2Z2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1OTg4NDIsImV4cCI6MjA2NzE3NDg0Mn0.cnahkQqw85AVhOcmbOK_Sl743QphShRQ60tKo9zOFPw';
-            
-            const emailResponse = await fetch(`${SUPABASE_URL}/functions/v1/send-contact-email`, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-              },
-              body: JSON.stringify({
-                submission_id: data[0].id,
-                name: formData.name,
-                email: formData.email,
-                subject: formData.subject,
-                message: formData.message,
-                to_email: 'smpikula@u.rochester.edu'
-              })
-            });
-            
-            const result = await emailResponse.json();
-            console.log('Email notification response:', result);
-          } catch (emailError) {
-            console.error('Error sending email notification:', emailError);
-            // Continue even if email fails
+          console.log('Form submitted successfully!');
+          
+          // Create success message
+          const successMessage = document.createElement('div');
+          successMessage.className = 'success-message';
+          successMessage.textContent = 'Thank you! Your message has been sent.';
+          successMessage.style.color = 'green';
+          successMessage.style.marginTop = '10px';
+          successMessage.style.padding = '10px';
+          successMessage.style.backgroundColor = '#d4edda';
+          successMessage.style.border = '1px solid #c3e6cb';
+          successMessage.style.borderRadius = '4px';
+          successMessage.style.textAlign = 'center';
+          
+          // Add the message after the submit button
+          const submitButton = form.querySelector('button[type="submit"]');
+          if (submitButton.nextSibling) {
+            submitButton.parentNode.insertBefore(successMessage, submitButton.nextSibling);
+          } else {
+            submitButton.parentNode.appendChild(successMessage);
           }
+          
+          // Remove the message after 5 seconds
+          setTimeout(() => {
+            if (successMessage.parentNode) {
+              successMessage.parentNode.removeChild(successMessage);
+            }
+          }, 5000);
         }
         
         // Show success message
