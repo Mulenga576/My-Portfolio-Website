@@ -1,12 +1,18 @@
-// Supabase client is now available globally from the script in index.html
-const SUPABASE_URL = 'https://gsebyixbhynqxxwhvgic.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzZWJ5aXhiaHlucXh4d2h2Z2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1OTg4NDIsImV4cCI6MjA2NzE3NDg0Mn0.cnahkQqw85AVhOcmbOK_Sl743QphShRQ60tKo9zOFPw';
+// Wait for Supabase to be initialized
+let supabase;
 
-// Initialize Supabase client
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-// Log Supabase status
-console.log('Supabase initialized:', supabase ? 'success' : 'failed');
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    // Wait for Supabase to be fully initialized
+    supabase = await window.supabasePromise;
+    console.log('Supabase client is ready to use');
+    
+    // Now that Supabase is ready, we can set up the form submission
+    setupContactForm();
+  } catch (error) {
+    console.error('Failed to initialize Supabase:', error);
+  }
+});
 
 // Test Supabase connection
 async function testSupabaseConnection() {
@@ -42,43 +48,62 @@ async function testSupabaseConnection() {
   }
 }
 
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', async () => {
-  // Test the Supabase connection when the page loads
-  await testSupabaseConnection();
-  
+// Set up the contact form with event listeners
+function setupContactForm() {
+  // Get the contact form
   const contactForm = document.querySelector('.contact-form');
+  if (!contactForm) {
+    console.error('Contact form not found');
+    return;
+  }
+
+  // Add submit event listener to the form
+  contactForm.addEventListener('submit', handleFormSubmit);
   
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = {
-        name: contactForm.querySelector('input[placeholder="Your Name"]').value,
-        email: contactForm.querySelector('input[type="email"]').value,
-        subject: contactForm.querySelector('input[placeholder="Subject"]').value || 'No Subject',
-        message: contactForm.querySelector('textarea').value
-      };
-      
-      // Get user's IP address (optional)
+  // Test the Supabase connection
+  testSupabaseConnection();
+}
+
+// Handle form submission
+async function handleFormSubmit(e) {
+  e.preventDefault();
+  
+  // Get form data
+  const formData = {
+    name: e.target.querySelector('input[placeholder="Your Name"]').value,
+    email: e.target.querySelector('input[type="email"]').value,
+    subject: e.target.querySelector('input[placeholder="Subject"]').value || 'No Subject',
+    message: e.target.querySelector('textarea').value
+  };
+  
+  // Get user's IP address (optional)
+  try {
+    const ipResponse = await fetch('https://api.ipify.org?format=json');
+    const ipData = await ipResponse.json();
+    formData.ip_address = ipData.ip;
+  } catch (error) {
+    console.log('Could not get IP address:', error);
+    formData.ip_address = 'unknown';
+  }
+  
+  // Submit to Supabase
+  const { data, error } = await supabase
+    .from('contact_submissions')
+    .insert([formData])
+    .select();
+  
+  // Handle response
+  const submitButton = e.target.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton.textContent;
+  
+  if (error) {
+    console.error('Error submitting form:', error);
+    submitButton.textContent = 'Error! Try Again';
+    submitButton.style.backgroundColor = '#dc2626';
+  } else {
+    // Send email notification if submission was successful
+    if (data && data[0]) {
       try {
-        const ipResponse = await fetch('https://api.ipify.org?format=json');
-        const ipData = await ipResponse.json();
-        formData.ip_address = ipData.ip;
-      } catch (error) {
-        console.log('Could not get IP address:', error);
-        formData.ip_address = 'unknown';
-      }
-      
-            // Submit to Supabase
-      const { data, error } = await supabase
-        .from('contact_submissions')
-        .insert([formData])
-        .select();
-      
-      // Send email notification if submission was successful
-      if (data && data[0]) {
         await supabase.functions.invoke('send-contact-email', {
           body: JSON.stringify({
             submission_id: data[0].id,
@@ -89,27 +114,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             to_email: 'smpikula@u.rochester.edu'
           })
         });
+      } catch (emailError) {
+        console.error('Error sending email notification:', emailError);
+        // Continue even if email fails
       }
-      
-      // Handle response
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton.textContent;
-      
-      if (error) {
-        console.error('Error submitting form:', error);
-        submitButton.textContent = 'Error! Try Again';
-        submitButton.style.backgroundColor = '#dc2626';
-      } else {
-        submitButton.textContent = 'Message Sent!';
-        submitButton.style.backgroundColor = '#10b981';
-        contactForm.reset();
-      }
-      
-      // Reset button after 3 seconds
-      setTimeout(() => {
-        submitButton.textContent = originalButtonText;
-        submitButton.style.backgroundColor = '';
-      }, 3000);
-    });
+    }
+    
+    submitButton.textContent = 'Message Sent!';
+    submitButton.style.backgroundColor = '#10b981';
+    e.target.reset();
   }
-});
+  
+  // Reset button after 3 seconds
+  setTimeout(() => {
+    submitButton.textContent = originalButtonText;
+    submitButton.style.backgroundColor = '';
+  }, 3000);
+}
