@@ -905,7 +905,45 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/contact-form.js" type="module"></script>
   <script src="js/performance.js" defer></script>
+  <script src="js/main.js"></script>
   <script src="js/cv-download.js"></script>
+  <!-- Typing Effect Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const words = ["Data Science Enthusiast", "Full Stack Developer", "Finance & IT Professional"];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typingSpeed = 100;
+      
+      const typeEffect = () => {
+        const currentWord = words[wordIndex];
+        const currentChar = currentWord.substring(0, charIndex);
+        const typedElement = document.getElementById('typed');
+        
+        if (typedElement) {
+          typedElement.textContent = currentChar;
+          
+          if (!isDeleting && charIndex < currentWord.length) {
+            charIndex++;
+            setTimeout(typeEffect, typingSpeed);
+          } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            setTimeout(typeEffect, typingSpeed / 2);
+          } else {
+            isDeleting = !isDeleting;
+            if (!isDeleting) {
+              wordIndex = (wordIndex + 1) % words.length;
+            }
+            setTimeout(typeEffect, typingSpeed * 2);
+          }
+        }
+      };
+      
+      // Start the typing effect
+      typeEffect();
+    });
+  </script>
   <!-- Removed non-existent scripts.js to prevent 404 error -->
   <!-- portfolio-clean.js is also removed as it might be redundant -->
   <script>
