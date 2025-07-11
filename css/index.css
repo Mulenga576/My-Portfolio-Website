@@ -70,7 +70,7 @@ html {
 
 /* Expertise Section */
 .expertise-card.web-development {
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/images/kevin-matos-Nl_FMFpXo2g-unsplash.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?technology');
   background-size: cover;
   background-position: center;
 }
@@ -453,7 +453,7 @@ body {
 /* Services Section */
 .services-section {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-              url('/assets/images/kevin-matos-Nl_FMFpXo2g-unsplash.jpg') no-repeat center center/cover;
+              url('https://source.unsplash.com/random/1920x1080/?tech') no-repeat center center/cover;
   background-attachment: fixed;
   padding: 6rem 0;
   position: relative;
@@ -2139,7 +2139,7 @@ body {
 /* Finance Analyst Card */
 .skill-card[data-skill="finance"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('/assets/images/kevin-matos-Nl_FMFpXo2g-unsplash.jpg') no-repeat center center/cover;
+              url('https://source.unsplash.com/random/1920x1080/?tech') no-repeat center center/cover;
 }
 
 .skill-card-back {
@@ -2411,7 +2411,7 @@ body {
 /* Finance Analyst Card */
 .skill-card[data-skill="finance"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('/assets/images/kevin-matos-Nl_FMFpXo2g-unsplash.jpg') no-repeat center center/cover;
+              url('https://source.unsplash.com/random/1920x1080/?tech') no-repeat center center/cover;
 }
 
 .skill-card-back {
