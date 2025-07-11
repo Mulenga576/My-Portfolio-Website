@@ -1,17 +1,15 @@
-// Wait for Supabase to be initialized
-let supabase;
+// Get Supabase client from window object
+const { supabase } = window;
 
-document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    // Wait for Supabase to be fully initialized
-    supabase = await window.supabasePromise;
-    console.log('Supabase client is ready to use');
-    
-    // Now that Supabase is ready, we can set up the form submission
-    setupContactForm();
-  } catch (error) {
-    console.error('Failed to initialize Supabase:', error);
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  if (!supabase) {
+    console.error('Supabase client not found. Make sure it is properly initialized in index.html');
+    return;
   }
+  
+  console.log('Supabase client is ready to use');
+  setupContactForm();
 });
 
 // Test Supabase connection

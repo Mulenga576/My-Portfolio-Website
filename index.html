@@ -870,44 +870,23 @@
   </footer>
 
   <!-- Scripts -->
-  <!-- Initialize Supabase first -->
-  <script>
-    // Create a promise to handle Supabase initialization
-    window.supabasePromise = (async function() {
-      try {
-        // Load Supabase
-        const script = document.createElement('script');
-        script.src = 'https://unpkg.com/@supabase/supabase-js@2';
-        document.head.appendChild(script);
-        
-        // Wait for Supabase to load
-        await new Promise((resolve) => {
-          script.onload = resolve;
-        });
-        
-        // Initialize Supabase
-        const SUPABASE_URL = 'https://gsebyixbhynqxxwhvgic.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzZWJ5aXhiaHlucXh4d2h2Z2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1OTg4NDIsImV4cCI6MjA2NzE3NDg0Mn0.cnahkQqw85AVhOcmbOK_Sl743QphShRQ60tKo9zOFPw';
-        
-        // Create Supabase client with CORS headers
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type'
-          }
-        });
-        
-        console.log('Supabase initialized successfully');
-        return supabase;
-      } catch (error) {
-        console.error('Error initializing Supabase:', error);
-        throw error;
-      }
-    })();
-  </script>
-  
-  <!-- Other scripts -->
+  <!-- Load Supabase from CDN -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Initialize Supabase -->
+  <script>
+    // Initialize Supabase
+    const SUPABASE_URL = 'https://gsebyixbhynqxxwhvgic.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzZWJ5aXhiaHlucXh4d2h2Z2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1OTg4NDIsImV4cCI6MjA2NzE3NDg0Mn0.cnahkQqw85AVhOcmbOK_Sl743QphShRQ60tKo9zOFPw';
+    
+    // Create and expose the Supabase client
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log('Supabase initialized:', supabase ? 'success' : 'failed');
+    
+    // Make supabase available globally
+    window.supabase = supabase;
+  </script>
   <script src="js/contact-form.js"></script>
   <script src="js/performance.js" defer></script>
   <script src="js/cv-download.js"></script>
