@@ -1,15 +1,19 @@
-// Get Supabase client from window object
-const { supabase } = window;
-
-// Initialize when DOM is loaded
+// Use window.supabase directly
 document.addEventListener('DOMContentLoaded', () => {
-  if (!supabase) {
+  if (!window.supabase) {
     console.error('Supabase client not found. Make sure it is properly initialized in index.html');
     return;
   }
   
   console.log('Supabase client is ready to use');
   setupContactForm();
+  
+  // Test the connection
+  testSupabaseConnection().then(isConnected => {
+    if (!isConnected) {
+      console.warn('Supabase connection test failed');
+    }
+  });
 });
 
 // Test Supabase connection
@@ -18,13 +22,13 @@ async function testSupabaseConnection() {
     console.log('Testing Supabase connection...');
     
     // First check if supabase is defined
-    if (!supabase) {
+    if (!window.supabase) {
       console.error('Supabase client is not defined');
       return false;
     }
     
     // Test a simple query
-    const { data, error } = await supabase
+    const { data, error } = await window.supabase
       .from('contact_submissions')
       .select('*')
       .limit(1);
@@ -85,7 +89,7 @@ async function handleFormSubmit(e) {
   }
   
   // Submit to Supabase
-  const { data, error } = await supabase
+  const { data, error } = await window.supabase
     .from('contact_submissions')
     .insert([formData])
     .select();
@@ -102,7 +106,7 @@ async function handleFormSubmit(e) {
     // Send email notification if submission was successful
     if (data && data[0]) {
       try {
-        await supabase.functions.invoke('send-contact-email', {
+        await window.supabase.functions.invoke('send-contact-email', {
           body: JSON.stringify({
             submission_id: data[0].id,
             name: formData.name,
