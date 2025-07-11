@@ -877,15 +877,14 @@
       const script = document.createElement('script');
       script.src = 'https://unpkg.com/@supabase/supabase-js@2';
       script.onload = () => {
-        // Initialize Supabase after the script is loaded
-        const SUPABASE_URL = 'https://gsebyixbhynqxxwhvgic.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzZWJ5aXhiaHlucXh4d2h2Z2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1OTg4NDIsImV4cCI6MjA2NzE3NDg0Mn0.cnahkQqw85AVhOcmbOK_Sl743QphShRQ60tKo9zOFPw';
-        
         try {
-          // The @supabase/supabase-js@2 exports the client as a default export
-          // We need to use the correct namespace
-          const { createClient } = supabase;
-          const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+          // Initialize Supabase after the script is loaded
+          const SUPABASE_URL = 'https://gsebyixbhynqxxwhvgic.supabase.co';
+          const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdzZWJ5aXhiaHlucXh4d2h2Z2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE1OTg4NDIsImV4cCI6MjA2NzE3NDg0Mn0.cnahkQqw85AVhOcmbOK_Sl743QphShRQ60tKo9zOFPw';
+          
+          console.log('Supabase script loaded, creating client...');
+          // Create the client using the global supabase variable
+          const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
           console.log('Supabase initialized successfully');
           window.supabase = supabaseClient;
           resolve(supabaseClient);
@@ -893,6 +892,10 @@
           console.error('Failed to initialize Supabase:', error);
           resolve(null);
         }
+      };
+      script.onerror = () => {
+        console.error('Failed to load Supabase script');
+        resolve(null);
       };
       document.head.appendChild(script);
     });
