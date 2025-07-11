@@ -83,25 +83,25 @@ document.addEventListener('DOMContentLoaded', async () => {
           successMessage.style.textAlign = 'center';
           
           // Add the message after the submit button
-          const submitButton = form.querySelector('button[type="submit"]');
+          const submitButton = e.target.querySelector('button[type="submit"]');
           if (submitButton.nextSibling) {
             submitButton.parentNode.insertBefore(successMessage, submitButton.nextSibling);
           } else {
             submitButton.parentNode.appendChild(successMessage);
           }
           
-          // Remove the message after 5 seconds
+          // Update button and reset form
+          submitButton.textContent = 'Message Sent!';
+          submitButton.style.backgroundColor = '#10b981';
+          e.target.reset();
+          
+          // Remove success message after 5 seconds
           setTimeout(() => {
             if (successMessage.parentNode) {
               successMessage.parentNode.removeChild(successMessage);
             }
           }, 5000);
         }
-        
-        // Show success message
-        submitButton.textContent = 'Message Sent!';
-        submitButton.style.backgroundColor = '#10b981';
-        e.target.reset();
         
       } catch (error) {
         console.error('Error submitting form:', error);
