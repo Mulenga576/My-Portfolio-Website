@@ -1,42 +1,56 @@
-// Use window.supabase directly
-document.addEventListener('DOMContentLoaded', () => {
-  if (!window.supabase) {
-    console.error('Supabase client not found. Make sure it is properly initialized in index.html');
-    return;
-  }
-  
-  console.log('Supabase client is ready to use');
-  setupContactForm();
-  
-  // Test the connection
-  testSupabaseConnection().then(isConnected => {
+// Wait for Supabase to be initialized
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    // Wait for Supabase to be fully initialized
+    const supabase = await window.supabasePromise;
+    
+    if (!supabase) {
+      throw new Error('Failed to initialize Supabase');
+    }
+    
+    console.log('Supabase client is ready to use');
+    setupContactForm(supabase);
+    
+    // Test the connection
+    const isConnected = await testSupabaseConnection(supabase);
     if (!isConnected) {
       console.warn('Supabase connection test failed');
     }
-  });
+  } catch (error) {
+    console.error('Error initializing contact form:', error);
+  }
 });
 
+// Update function to accept supabase as parameter
+function setupContactForm(supabase) {
+  const contactForm = document.querySelector('.contact-form');
+  if (!contactForm) {
+    console.error('Contact form not found');
+    return;
+  }
+  
+  contactForm.addEventListener('submit', (e) => handleFormSubmit(e, supabase));
+}
+
 // Test Supabase connection
-async function testSupabaseConnection() {
+async function testSupabaseConnection(supabase) {
   try {
     console.log('Testing Supabase connection...');
     
-    // First check if supabase is defined
-    if (!window.supabase) {
+    if (!supabase) {
       console.error('Supabase client is not defined');
       return false;
     }
     
     // Test a simple query
-    const { data, error } = await window.supabase
+    const { data, error } = await supabase
       .from('contact_submissions')
       .select('*')
       .limit(1);
-    
+      
     if (error) {
       console.error('Supabase query error:', error);
       console.log('This might be normal if the table is empty');
-      // Even if there's an error, if we got this far, the connection is working
       console.log('✅ Supabase connection is working!');
       return true;
     }
@@ -50,24 +64,8 @@ async function testSupabaseConnection() {
   }
 }
 
-// Set up the contact form with event listeners
-function setupContactForm() {
-  // Get the contact form
-  const contactForm = document.querySelector('.contact-form');
-  if (!contactForm) {
-    console.error('Contact form not found');
-    return;
-  }
-
-  // Add submit event listener to the form
-  contactForm.addEventListener('submit', handleFormSubmit);
-  
-  // Test the Supabase connection
-  testSupabaseConnection();
-}
-
 // Handle form submission
-async function handleFormSubmit(e) {
+async function handleFormSubmit(e, supabase) {
   e.preventDefault();
   
   // Get form data
@@ -89,7 +87,7 @@ async function handleFormSubmit(e) {
   }
   
   // Submit to Supabase
-  const { data, error } = await window.supabase
+  const { data, error } = await supabase
     .from('contact_submissions')
     .insert([formData])
     .select();
@@ -106,7 +104,7 @@ async function handleFormSubmit(e) {
     // Send email notification if submission was successful
     if (data && data[0]) {
       try {
-        await window.supabase.functions.invoke('send-contact-email', {
+        await supabase.functions.invoke('send-contact-email', {
           body: JSON.stringify({
             submission_id: data[0].id,
             name: formData.name,
