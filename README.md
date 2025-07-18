@@ -122,7 +122,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-- Email: smpikula@u.rochester.edu
+- Email: mpsilence1@gmail.com
 - LinkedIn: [Silence Mpikula](https://www.linkedin.com/in/silence-mpikula-24a559335/)
 - GitHub: [Mulenga576](https://github.com/Mulenga576)
 
