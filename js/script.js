@@ -1,5 +1,16 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle Functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+    
     // Function to handle smooth scrolling
   function scrollToSection(selector, offset = 80) {
     const element = document.querySelector(selector);
