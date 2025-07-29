@@ -4080,12 +4080,12 @@ body {
 /* Project Card Backgrounds */
 .experience-card:nth-child(1) .experience-image {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), 
-              url('../assets/images/kevin-matos-Nl_FMFpXo2g-unsplash.jpg') center/cover no-repeat;
+              url('../assets/images/octavian-dan-craciun-b21Ty33CqVs-unsplash.jpg') center/cover no-repeat;
 }
 
 .experience-card:nth-child(2) .experience-image {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), 
-              url('../assets/images/nima-sarram-ABlp76_JnH4-unsplash.jpg') center/cover no-repeat;
+              url('../assets/images/nikita-kachanovsky-OVbeSXRk_9E-unsplash.jpg') center/cover no-repeat;
 }
 
 .experience-card:nth-child(3) .experience-image {
