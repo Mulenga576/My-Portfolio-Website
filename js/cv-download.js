@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       
       // Path to the CV file - including the 'public' directory in the URL
-      const cvUrl = 'public/downloads/Mulenga_Mpikula_Silence_CV.pdf';
+      const cvUrl = 'public/downloads/Mulenga Mpikula Silence CV.pdf';
       const fullUrl = window.location.hostname === 'file' ? 
         window.location.href.split('/').slice(0, -1).join('/') + '/' + cvUrl : 
         '/' + cvUrl;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const link = document.createElement('a');
         link.href = blobUrl;
-        link.download = 'Mulenga_Mpikula_Silence_CV.pdf';
+        link.download = 'Mulenga Mpikula Silence CV.pdf';
         
         document.body.appendChild(link);
         link.click();
