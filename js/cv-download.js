@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     downloadCvBtn.addEventListener('click', async function(e) {
       e.preventDefault();
       
-      // Path to the CV file - including the 'public' directory in the URL
-      const cvUrl = 'public/downloads/Mulenga Mpikula Silence CV.pdf';
+      // Path to the CV file - public folder contents are served from root on Netlify
+      const cvUrl = 'downloads/Mulenga Mpikula Silence CV.pdf';
       const fullUrl = window.location.hostname === 'file' ? 
-        window.location.href.split('/').slice(0, -1).join('/') + '/' + cvUrl : 
+        window.location.href.split('/').slice(0, -1).join('/') + '/public/' + cvUrl : 
         '/' + cvUrl;
       
       console.log('Attempting to download CV from:', fullUrl);

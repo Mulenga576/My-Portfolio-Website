@@ -1,12 +1,12 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+/// <reference path="./types.d.ts" />
 
+// Supabase Edge Function
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
 
-serve(async (req) => {
+Deno.serve(async (req: Request) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
@@ -16,7 +16,7 @@ serve(async (req) => {
     const { name, email, subject, message } = await req.json()
 
     // Initialize Resend with your API key
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')!
     
     if (!RESEND_API_KEY) {
       throw new Error('RESEND_API_KEY is not configured')
@@ -65,13 +65,15 @@ serve(async (req) => {
       },
     )
 
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error sending email:', error)
+    
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred'
     
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message 
+        error: errorMessage 
       }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },

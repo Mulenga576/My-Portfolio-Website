@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favicon Generator</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .download-link {
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
     <h2>Favicon Generator</h2>
-    <canvas id="canvas" style="display: none;"></canvas>
+    <canvas id="canvas" class="hidden"></canvas>
     <div id="downloads"></div>
 
     <script>
@@ -34,8 +45,7 @@
                     link.download = filename;
                     link.href = URL.createObjectURL(blob);
                     link.textContent = `Download ${filename}`;
-                    link.style.display = 'block';
-                    link.style.margin = '5px 0';
+                    link.className = 'download-link';
                     downloadsDiv.appendChild(link);
                     
                     // Auto-click to download

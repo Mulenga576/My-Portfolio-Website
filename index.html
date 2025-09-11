@@ -33,8 +33,20 @@
   <meta name="msapplication-TileImage" content="public/mstile-144x144.png">
   <meta name="msapplication-config" content="public/browserconfig.xml">
   
-  <!-- Theme Color for Mobile Browsers -->
-  <meta name="theme-color" content="#431824">
+  <!-- Theme Color for Mobile Browsers (CSS-based for compatibility) -->
+  <style>
+    :root {
+      --theme-color: #431824;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --theme-color: #431824;
+      }
+    }
+  </style>
+  <!-- Fallback meta tags for specific browsers -->
+  <meta name="msapplication-navbutton-color" content="#431824">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
