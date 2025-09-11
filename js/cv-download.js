@@ -2,46 +2,28 @@ document.addEventListener('DOMContentLoaded', function() {
   const downloadCvBtn = document.getElementById('download-cv');
   
   if (downloadCvBtn) {
-    downloadCvBtn.addEventListener('click', async function(e) {
+    downloadCvBtn.addEventListener('click', function(e) {
       e.preventDefault();
       
-      // Path to the CV file - public folder contents are served from root on Netlify
-      const cvUrl = 'downloads/Mulenga Mpikula Silence CV.pdf';
-      const fullUrl = window.location.hostname === 'file' ? 
-        window.location.href.split('/').slice(0, -1).join('/') + '/public/' + cvUrl : 
-        '/' + cvUrl;
+      // Direct download approach - simpler and more reliable
+      const cvPath = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:' ? 
+        'public/downloads/Mulenga Mpikula Silence CV.pdf' : 
+        'downloads/Mulenga%20Mpikula%20Silence%20CV.pdf';
       
-      console.log('Attempting to download CV from:', fullUrl);
+      console.log('Downloading CV from:', cvPath);
       
-      try {
-        // Try to fetch the file first
-        const response = await fetch(fullUrl);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        // Create blob and download
-        const blob = await response.blob();
-        const blobUrl = window.URL.createObjectURL(blob);
-        
-        const link = document.createElement('a');
-        link.href = blobUrl;
-        link.download = 'Mulenga Mpikula Silence CV.pdf';
-        
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        // Clean up the blob URL
-        window.URL.revokeObjectURL(blobUrl);
-        
-        showNotification('CV download started!', 'success');
-      } catch (error) {
-        console.error('Download error:', error);
-        showNotification('Failed to download CV. Please try again or contact me.', 'error');
-        // Fallback to opening in new tab
-        window.open(fullUrl, '_blank');
-      }
+      // Create download link
+      const link = document.createElement('a');
+      link.href = cvPath;
+      link.download = 'Mulenga_Mpikula_Silence_CV.pdf';
+      link.target = '_blank';
+      
+      // Trigger download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      showNotification('CV download started!', 'success');
     });
   }
   
