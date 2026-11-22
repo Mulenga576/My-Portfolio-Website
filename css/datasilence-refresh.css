@@ -1,0 +1,64 @@
+/* DataSilence 2.0 — restrained visual refresh.
+   Loaded after legacy styles to preserve existing sections and layouts. */
+:root {
+  --primary: #2563eb;
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #60a5fa;
+  --secondary: #64748b;
+  --secondary-color: #64748b;
+  --accent: #d6a75c;
+  --dark: #111827;
+  --light: #f7f7f4;
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-700: #334155;
+  --gray-600: #475569;
+  --gray-100: #f7f7f4;
+  --shadow-lg: 0 12px 30px rgba(17,24,39,.09);
+  --shadow-xl: 0 18px 40px rgba(17,24,39,.12);
+}
+body { background-color: #f7f7f4; }
+a, button { transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+.name-gradient, .text-gradient {
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: #2563eb !important;
+  text-shadow: none !important;
+}
+.section-title::after, .title-underline {
+  background: #2563eb !important;
+  height: 3px;
+}
+.services-bg-overlay { background: rgba(17,24,39,.35) !important; }
+.btn-primary, .rotation-badge {
+  background: #2563eb !important;
+  box-shadow: none !important;
+}
+.btn-primary:hover { background: #1d4ed8 !important; }
+.rotation-badge, .rotation-badge i {
+  animation: none !important;
+}
+.experience-card[data-rotated="true"] {
+  border: 1px solid #cbd5e1 !important;
+  background: #fff !important;
+  box-shadow: 0 4px 18px rgba(17,24,39,.06);
+}
+.experience-card[data-rotated="true"]::before { display: none !important; }
+.experience-card[data-rotated="true"]:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(17,24,39,.10) !important;
+}
+.experience-card[data-rotated="true"]:hover .rotation-badge {
+  transform: none !important;
+  background: #1d4ed8 !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
