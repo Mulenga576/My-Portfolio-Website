@@ -98,7 +98,7 @@ html {
 
 /* Expertise Section */
 .expertise-card.web-development {
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?technology');
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/images/nikita-kachanovsky-OVbeSXRk_9E-unsplash.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -475,13 +475,13 @@ body {
 }
 
 .bg-light {
-  background-color: #f8fafc;
+  background-color: var(--light);
 }
 
 /* Services Section */
 .services-section {
   background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-              url('https://source.unsplash.com/random/1920x1080/?tech') no-repeat center center/cover;
+              url('../assets/images/nikita-kachanovsky-OVbeSXRk_9E-unsplash.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   padding: 6rem 0;
   position: relative;
@@ -495,7 +495,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  background: rgba(17, 24, 39, 0.35);
   z-index: -1;
 }
 
@@ -598,7 +598,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   border-radius: 50%;
   z-index: 1;
   transform: scale(0.9);
@@ -607,7 +607,7 @@ body {
 
 .service-card:hover .icon-shape {
   transform: scale(1.1);
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(37, 99, 235, 0.15);
 }
 
 .service-card h3 {
@@ -708,13 +708,11 @@ body {
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
   transition: all 0.3s ease;
 }
 
 .cta-container .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
 .btn {
@@ -826,7 +824,7 @@ body {
 .section-underline {
   height: 4px;
   width: 80px;
-  background: linear-gradient(90deg, var(--primary), #9b59b6);
+  background: var(--primary);
   margin: 0.5rem auto 0;
   border-radius: 2px;
 }
@@ -945,7 +943,7 @@ body {
   text-align: center;
   position: relative;
   padding: 4rem 0;
-  background: linear-gradient(145deg, rgba(108, 99, 255, 0.03) 0%, rgba(255, 107, 107, 0.03) 100%);
+  background: linear-gradient(145deg, rgba(37, 99, 235, 0.03) 0%, rgba(255, 107, 107, 0.03) 100%);
   border-radius: 20px;
   overflow: hidden;
 }
@@ -974,7 +972,6 @@ body {
   background-clip: text;
   color: transparent;
   padding: 0 1.5rem;
-  text-shadow: 0 2px 10px rgba(108, 99, 255, 0.1);
 }
 
 .what-i-offer .section-subtitle::after {
@@ -1006,7 +1003,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.1);
   position: relative;
   z-index: 1;
   transform: translateY(0);
@@ -1040,7 +1037,7 @@ body {
   width: 80px;
   height: 80px;
   margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+  background: rgba(37, 99, 235, 0.1);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -1070,7 +1067,7 @@ body {
 }
 
 .what-i-offer .tech-item {
-  background: rgba(108, 99, 255, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   color: var(--gray-700);
   padding: 0.6rem 1.1rem;
   border-radius: 50px;
@@ -1078,7 +1075,7 @@ body {
   display: inline-flex;
   align-items: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.15);
   font-weight: 500;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -1096,7 +1093,7 @@ body {
 .what-i-offer .skill-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  border-color: rgba(108, 99, 255, 0.2);
+  border-color: rgba(37, 99, 235, 0.2);
 }
 
 .what-i-offer .skill-card:hover::after {
@@ -1120,7 +1117,6 @@ body {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
   border-color: transparent;
 }
 
@@ -1226,7 +1222,7 @@ body {
   bottom: 0;
   border-radius: 50%;
   padding: 4px;
-  background: linear-gradient(135deg, rgba(99,102,241,0.8), rgba(79,70,229,0.8));
+  background: rgba(37, 99, 235, 0.8);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -1244,12 +1240,6 @@ body {
 
 .profile-image:hover::before {
   opacity: 1;
-  animation: rotate 6s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 .profile-image img {
@@ -1310,8 +1300,7 @@ body {
 }
 
 .name-accent {
-  color: var(--primary);
-  text-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+  color: var(--primary-light);
   position: relative;
   display: inline-block;
   margin: 0 0.25rem;
@@ -1349,12 +1338,11 @@ body {
 }
 
 #typed {
-  color: var(--primary);
+  color: var(--primary-light);
   font-weight: 600;
   min-width: 250px;
   text-align: center;
   display: inline-block;
-  text-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
 }
 
 .typing-text .cursor {
@@ -1365,7 +1353,6 @@ body {
   background-color: var(--primary);
   margin-left: 4px;
   animation: blink 0.8s step-end infinite;
-  box-shadow: 0 0 10px var(--primary);
   margin-bottom: 4px;
 }
 
@@ -1442,7 +1429,7 @@ body {
 }
 
 #download-cv {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: var(--primary);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -1451,7 +1438,6 @@ body {
 
 #download-cv:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
 }
 
 #download-cv i {
@@ -1737,7 +1723,7 @@ body {
 .about-title .text-gradient {
   margin-left: 0.5rem;
   display: inline-block;
-  background: linear-gradient(135deg, #00d4ff 0%, #6a11cb 100%);
+  background: var(--primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1752,14 +1738,14 @@ body {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #00d4ff, #6a11cb);
+  background: var(--primary);
   border-radius: 3px;
   z-index: -1;
   opacity: 0.7;
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, var(--primary), #9b59b6);
+  background: var(--primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1768,7 +1754,7 @@ body {
 .title-underline {
   height: 4px;
   width: 80px;
-  background: linear-gradient(90deg, var(--primary), #9b59b6);
+  background: var(--primary);
   margin: 0.5rem auto 0;
   border-radius: 2px;
 }
@@ -2149,25 +2135,25 @@ body {
 /* Web Development Card */
 .skill-card[data-skill="web"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('portfolio images/van-tay-media--S2-AKdWQoQ-unsplash.jpg') no-repeat center center/cover;
+              url('../assets/images/van-tay-media--S2-AKdWQoQ-unsplash.jpg') no-repeat center center/cover;
 }
 
 /* Data Science Card */
 .skill-card[data-skill="data"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('portfolio images/luke-chesser-JKUTrJ4vK00-unsplash.jpg') no-repeat center center/cover;
+              url('../assets/images/luke-chesser-JKUTrJ4vK00-unsplash.jpg') no-repeat center center/cover;
 }
 
 /* Math Enthusiast Card */
 .skill-card[data-skill="math"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('portfolio images/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg') no-repeat center center/cover;
+              url('../assets/images/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg') no-repeat center center/cover;
 }
 
 /* Finance Analyst Card */
 .skill-card[data-skill="finance"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('https://source.unsplash.com/random/1920x1080/?tech') no-repeat center center/cover;
+              url('../assets/images/nikita-kachanovsky-OVbeSXRk_9E-unsplash.jpg') no-repeat center center/cover;
 }
 
 .skill-card-back {
@@ -2421,25 +2407,25 @@ body {
 /* Web Development Card */
 .skill-card[data-skill="web"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('portfolio images/van-tay-media--S2-AKdWQoQ-unsplash.jpg') no-repeat center center/cover;
+              url('../assets/images/van-tay-media--S2-AKdWQoQ-unsplash.jpg') no-repeat center center/cover;
 }
 
 /* Data Science Card */
 .skill-card[data-skill="data"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('portfolio images/luke-chesser-JKUTrJ4vK00-unsplash.jpg') no-repeat center center/cover;
+              url('../assets/images/luke-chesser-JKUTrJ4vK00-unsplash.jpg') no-repeat center center/cover;
 }
 
 /* Math Enthusiast Card */
 .skill-card[data-skill="math"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('portfolio images/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg') no-repeat center center/cover;
+              url('../assets/images/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg') no-repeat center center/cover;
 }
 
 /* Finance Analyst Card */
 .skill-card[data-skill="finance"] .skill-card-back {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('https://source.unsplash.com/random/1920x1080/?tech') no-repeat center center/cover;
+              url('../assets/images/nikita-kachanovsky-OVbeSXRk_9E-unsplash.jpg') no-repeat center center/cover;
 }
 
 .skill-card-back {
@@ -2534,12 +2520,10 @@ body {
   font-size: 2.5rem;
   border-radius: 50%;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
 }
 
 .skill-card:hover .skill-icon {
   transform: scale(1.05);
-  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
 }
 
 .skill-card h3 {
@@ -2577,7 +2561,6 @@ body {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
 }
 
 /* Scrollbar styling for the back of the card */
@@ -2659,7 +2642,7 @@ body {
 }
 
 .experience-icon {
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  background: var(--primary);
   color: white;
   font-size: 2.5rem;
   padding: 2rem;
@@ -2710,8 +2693,8 @@ body {
   display: inline-block;
   padding: 0.6rem 1.5rem;
   background: transparent;
-  color: #4f46e5;
-  border: 2px solid #4f46e5;
+  color: var(--primary);
+  border: 2px solid var(--primary);
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
@@ -2721,7 +2704,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: #4f46e5;
+  background: var(--primary);
   color: white;
   transform: translateY(-2px);
 }
@@ -2789,7 +2772,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.8), rgba(155, 89, 182, 0.8));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(37, 99, 235, 0.8));
   opacity: 0.9;
   transition: opacity 0.3s ease;
 }
@@ -2877,30 +2860,29 @@ body {
   padding: 0.6rem 1.25rem;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 2px solid #6c63ff;
-  color: #6c63ff;
+  border: 2px solid var(--primary);
+  color: var(--primary);
   border-radius: 50px;
   transition: all 0.3s ease;
 }
 
 .experience-actions .btn-outline:hover {
-  background: #6c63ff;
+  background: var(--primary);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
 }
 
 /* Experience Card Backgrounds */
 .experience-card.finance .experience-image {
-  background-image: url('portfolio%20images/arthur-a-9rz5x8LGBb8-unsplash.jpg');
+  background-image: url('../assets/images/arthur-a-9rz5x8LGBb8-unsplash.jpg');
 }
 
 .experience-card.web-dev .experience-image {
-  background-image: url('portfolio%20images/vitalii7577-jW7C-KidYi0-unsplash.jpg');
+  background-image: url('../assets/images/vitalii7577-jW7C-KidYi0-unsplash.jpg');
 }
 
 .experience-card.ml .experience-image {
-  background-image: url('portfolio%20images/kanchanara-GnWfl_nnZro-unsplash.jpg');
+  background-image: url('../assets/images/kanchanara-GnWfl_nnZro-unsplash.jpg');
 }
 
 /* Responsive adjustments */
@@ -3334,7 +3316,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(99, 102, 241, 0.9), rgba(79, 70, 229, 0.9));
+  background: linear-gradient(to bottom, rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.9));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3423,7 +3405,7 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary), #9b59b6);
+  background: var(--primary);
   border-radius: 2px;
 }
 
@@ -3458,7 +3440,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(155, 89, 182, 0.1));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.1));
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 0;
@@ -3466,7 +3448,7 @@ body {
 
 .skill-logo:hover {
   transform: translateY(-3px);
-  border-color: rgba(108, 99, 255, 0.3);
+  border-color: rgba(37, 99, 235, 0.3);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -3514,7 +3496,7 @@ body {
 .fa-pencil-ruler { color: #ff61f6; } /* Adobe XD */
 .fa-python { color: #3776ab; }
 .fa-chart-line { color: #4bc0c0; }
-.fa-robot { color: #9b59b6; }
+.fa-robot { color: var(--primary); }
 .fa-chart-bar { color: #e74c3c; }
 .fa-r-project { color: #276dc3; }
 
@@ -3570,7 +3552,6 @@ body {
 /* Contact Section */
 .contact-title {
   color: #00ff40 !important;
-  text-shadow: 0 0 10px rgba(0, 255, 106, 0.3);
 }
 
 .btn-outline {
@@ -3581,7 +3562,6 @@ body {
 
 .btn-outline:hover {
   background-color: rgba(0, 255, 106, 0.1);
-  box-shadow: 0 0 15px rgba(0, 255, 106, 0.3);
 }
 .contact-content {
   display: grid;
@@ -3665,7 +3645,7 @@ body {
 
 /* Instagram hover effect */
 .social-links a[href*="instagram"]:hover {
-  background: linear-gradient(45deg, #ff8a00, #e52e71, #ff0084, #d300c5, #7638fa);
+  background: var(--primary);
   color: white;
 }
 
@@ -3700,7 +3680,6 @@ body {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
 .form-group textarea {
@@ -3819,7 +3798,7 @@ body {
 }
 
 .footer-links a {
-  color: #4ded17 !important; /* Force white color */
+  color: var(--light);
   text-decoration: none;
   transition: all 0.3s ease;
   font-weight: 600; /* Slightly bolder */
@@ -3834,7 +3813,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: #4ded17 !important; /* Keep white on hover */
+  color: var(--light);
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -4281,12 +4260,22 @@ body {
 
 .experience-links {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
 }
 
+.experience-link-status,
 .experience-link {
-  width: 32px;
-  height: 32px;
+  font-size: 0.75rem;
+}
+
+.experience-link-status {
+  color: var(--secondary);
+}
+
+.experience-link {
+  padding: 0.35rem 0.5rem;
   border-radius: 4px;
   background: #f8fafc;
   color: #64748b;

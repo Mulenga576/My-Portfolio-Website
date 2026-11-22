@@ -1,5 +1,5 @@
 // Public portfolio contact form: only insert messages; never read private submissions.
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.contact-form');
   if (!form) return;
   const button = form.querySelector('button[type="submit"]');
@@ -11,27 +11,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   feedback.style.marginTop = '12px';
   form.appendChild(feedback);
 
-  let client;
-  try {
-    client = await window.supabasePromise;
-  } catch (error) {
-    console.error('Unable to initialise contact form', error);
-  }
-
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    if (button.disabled) return;
     feedback.textContent = '';
-    if (!client) {
-      feedback.style.color = '#b91c1c';
-      feedback.textContent = 'The contact form is temporarily unavailable. Please try again later.';
-      return;
-    }
 
     const name = form.querySelector('[name="name"]').value.trim();
     const email = form.querySelector('[name="email"]').value.trim();
     const subject = form.querySelector('[name="subject"]').value.trim();
     const message = form.querySelector('[name="message"]').value.trim();
     if (!name || !email || !message || !form.checkValidity()) {
+      feedback.style.color = '#b91c1c';
+      feedback.textContent = 'Please enter your name, email, and message.';
       form.reportValidity();
       return;
     }
@@ -44,6 +35,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     button.disabled = true;
     button.textContent = 'Sending…';
     try {
+      const client = await window.supabasePromise;
+      if (!client) {
+        feedback.style.color = '#b91c1c';
+        feedback.textContent = 'The contact form is temporarily unavailable. Please try again later.';
+        return;
+      }
       // No .select(): anonymous visitors must never be able to read stored submissions.
       const { error } = await client.from('contact_submissions').insert({
         name, email, subject: subject || null, message

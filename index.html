@@ -7,47 +7,10 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/project-rotation.css">
   <link rel="stylesheet" href="css/datasilence-refresh.css">
-  <!-- Favicon for all devices -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo (1).svg">
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
   <link rel="icon" type="image/x-icon" href="public/favicon.ico">
-  
-  <!-- Apple Touch Icons for iOS -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo (1).svg">
-  <link rel="apple-touch-icon" sizes="152x152" href="public/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="public/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="public/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="public/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="public/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="public/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="public/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="public/apple-touch-icon-57x57.png">
-  
-  <!-- Android Chrome Icons -->
-  <link rel="icon" type="image/png" sizes="192x192" href="public/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="public/android-chrome-512x512.png">
-  
-  <!-- Web App Manifest -->
   <link rel="manifest" href="public/site.webmanifest">
-  
-  <!-- Microsoft Tiles -->
-  <meta name="msapplication-TileColor" content="#431824">
-  <meta name="msapplication-TileImage" content="public/mstile-144x144.png">
-  <meta name="msapplication-config" content="public/browserconfig.xml">
-  
-  <!-- Theme Color for Mobile Browsers (CSS-based for compatibility) -->
-  <style>
-    :root {
-      --theme-color: #431824;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --theme-color: #431824;
-      }
-    }
-  </style>
-  <!-- Fallback meta tags for specific browsers -->
-  <meta name="msapplication-navbutton-color" content="#431824">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#111827">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -98,7 +61,7 @@
       <div class="cta-buttons">
         <a href="#portfolio" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
-        <a href="#" id="download-cv" class="btn btn-primary">
+        <a href="public/downloads/Mulenga%20Mpikula%20Silence%20CV.pdf" id="download-cv" class="btn btn-primary" download="Mulenga_Mpikula_Silence_CV.pdf">
           <i class="fas fa-download"></i> Download CV
         </a>
       </div>
@@ -524,8 +487,8 @@
                 <li><i class="fas fa-brain"></i> Scikit-learn</li>
               </ul>
               <div class="experience-links">
-                <a href="#" class="experience-link" aria-label="View Project" data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#" class="experience-link" aria-label="View Code" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
+                <span class="experience-link-status" data-project-demo>Demo unavailable</span>
+                <span class="experience-link-status" data-project-source>Source unavailable</span>
               </div>
             </div>
           </div>
@@ -554,8 +517,8 @@
                 <li><i class="fas fa-credit-card"></i> Stripe</li>
               </ul>
               <div class="experience-links">
-                <a href="#" class="experience-link" aria-label="View Project" data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#" class="experience-link" aria-label="View Code" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
+                <span class="experience-link-status" data-project-demo>Demo unavailable</span>
+                <span class="experience-link-status" data-project-source>Source unavailable</span>
               </div>
             </div>
           </div>
@@ -584,8 +547,8 @@
                 <li><i class="fas fa-database"></i> SQLite</li>
               </ul>
               <div class="experience-links">
-                <a href="#" class="experience-link" aria-label="View Project" data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                <a href="#" class="experience-link" aria-label="View Code" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
+                <span class="experience-link-status" data-project-demo>Demo unavailable</span>
+                <span class="experience-link-status" data-project-source>Source unavailable</span>
               </div>
             </div>
           </div>
@@ -635,7 +598,7 @@
             </div>
             <div class="portfolio-overlay">
               <div class="portfolio-links">
-                <a href="#" class="btn btn-primary" target="_blank">View Project</a>
+                <a href="https://zm.uwc.org/" class="btn btn-primary" target="_blank" rel="noopener">Visit UWC Zambia</a>
               </div>
             </div>
           </div>
@@ -889,7 +852,7 @@
             </a>
           </div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" method="post">
           <div class="form-group">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
           </div>
@@ -919,7 +882,7 @@
           <a href="#about" class="nav-link">About</a>
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#portfolio" class="nav-link">Portfolio</a>
-          <a href="index.html" class="nav-link">Internship</a>
+          <a href="internship-tracker.html" class="nav-link">Internship</a>
           <a href="#contact" class="nav-link">Contact</a>
         </nav>
         <div class="footer-social">
@@ -969,7 +932,6 @@
   <script src="js/contact-form.js" type="module"></script>
   <script src="js/performance.js" defer></script>
   <script src="js/script.js"></script>
-  <script src="js/cv-download.js"></script>
   <!-- Typing Effect Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {

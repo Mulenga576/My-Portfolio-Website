@@ -8,11 +8,9 @@ export interface ContactFormData {
 }
 
 export async function submitContactForm(formData: ContactFormData): Promise<boolean> {
-  console.log('Submitting contact form with data:', formData);
-  
   try {
     // 1. Save to database
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('contact_submissions')
       .insert([
         { 
@@ -20,12 +18,8 @@ export async function submitContactForm(formData: ContactFormData): Promise<bool
           email: formData.email,
           message: formData.message,
           subject: formData.subject || 'New Contact Form Submission',
-          status: 'new'
         },
-      ])
-      .select();
-
-    console.log('Supabase response:', { data, error });
+      ]);
 
     if (error) {
       console.error('Supabase error details:', error);

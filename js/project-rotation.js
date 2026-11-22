@@ -24,10 +24,7 @@ class ProjectRotation {
                     { icon: 'fas fa-mobile-alt', name: 'Responsive' },
                     { icon: 'fas fa-paint-brush', name: 'UI/UX' }
                 ],
-                links: {
-                    demo: '#',
-                    github: '#'
-                }
+                demo: { href: 'https://zm.uwc.org/', label: 'Visit UWC Zambia' }
             },
             {
                 id: 'internship-tracker',
@@ -43,9 +40,10 @@ class ProjectRotation {
                     { icon: 'fas fa-chart-bar', name: 'Analytics' },
                     { icon: 'fas fa-database', name: 'Local Storage' }
                 ],
-                links: {
-                    demo: 'internship-tracker.html',
-                    github: '#'
+                demo: { href: 'internship-tracker.html', label: 'View Tracker' },
+                source: {
+                    href: 'https://github.com/Mulenga576/My-Portfolio-Website/blob/main/internship-tracker.html',
+                    label: 'View Source'
                 }
             },
             {
@@ -62,10 +60,7 @@ class ProjectRotation {
                     { icon: 'fas fa-tachometer-alt', name: 'Dashboard' },
                     { icon: 'fas fa-coins', name: 'Financial' }
                 ],
-                links: {
-                    demo: 'https://sage-mooncake-0a475c.netlify.app',
-                    github: '#'
-                }
+                demo: { href: 'https://sage-mooncake-0a475c.netlify.app/', label: 'View Demo' }
             }
         ];
 
@@ -83,8 +78,7 @@ class ProjectRotation {
                     { icon: 'fas fa-chart-bar', name: 'Matplotlib' },
                     { icon: 'fas fa-project-diagram', name: 'NumPy' },
                     { icon: 'fas fa-brain', name: 'Scikit-learn' }
-                ],
-                links: { demo: '#', github: '#' }
+                ]
             },
             {
                 id: 'ecommerce-platform',
@@ -98,8 +92,7 @@ class ProjectRotation {
                     { icon: 'fas fa-database', name: 'MongoDB' },
                     { icon: 'fas fa-bolt', name: 'Express' },
                     { icon: 'fas fa-credit-card', name: 'Stripe' }
-                ],
-                links: { demo: '#', github: '#' }
+                ]
             },
             {
                 id: 'fitness-tracker',
@@ -113,8 +106,7 @@ class ProjectRotation {
                     { icon: 'fas fa-chart-line', name: 'Recharts' },
                     { icon: 'fas fa-heartbeat', name: 'HealthKit' },
                     { icon: 'fas fa-database', name: 'SQLite' }
-                ],
-                links: { demo: '#', github: '#' }
+                ]
             }
         ];
 
@@ -172,15 +164,17 @@ class ProjectRotation {
     }
 
     applyRotation(rotation) {
-        const { project, position } = rotation;
+        const { position } = rotation;
+        // Older saved rotations contain a copy of the project. Use its ID to load current links.
+        const project = this.portfolioProjects.find(({ id }) => id === rotation.project?.id);
         const experienceCards = document.querySelectorAll('.experience-card');
         
-        if (experienceCards[position]) {
-            this.updateExperienceCard(experienceCards[position], project, position);
+        if (project && experienceCards[position]) {
+            this.updateExperienceCard(experienceCards[position], project);
         }
     }
 
-    updateExperienceCard(cardElement, project, position) {
+    updateExperienceCard(cardElement, project) {
         // Add rotation indicator
         cardElement.setAttribute('data-rotated', 'true');
         cardElement.style.position = 'relative';
@@ -217,24 +211,21 @@ class ProjectRotation {
             ).join('');
         }
 
-        // Update links
-        const links = cardElement.querySelectorAll('.experience-link');
-        if (links.length >= 2) {
-            links[0].href = project.links.demo;
-            links[1].href = project.links.github;
-        }
+        this.updateProjectLink(cardElement, 'demo', project.demo, 'Demo unavailable');
+        this.updateProjectLink(cardElement, 'source', project.source, 'Source unavailable');
+    }
 
-        // Add smooth transition effect
-        cardElement.style.transform = 'scale(0.95)';
-        cardElement.style.transition = 'all 0.3s ease';
-        
-        setTimeout(() => {
-            cardElement.style.transform = 'scale(1)';
-        }, 100);
+    updateProjectLink(cardElement, type, destination, unavailableLabel) {
+        const attribute = 'data-project-' + type;
+        const current = cardElement.querySelector('[' + attribute + ']');
+        if (!current) return;
 
-        // Add pulse animation
-        cardElement.classList.add('project-rotated');
-        setTimeout(() => cardElement.classList.remove('project-rotated'), 2000);
+        const element = document.createElement(destination ? 'a' : 'span');
+        element.setAttribute(attribute, '');
+        element.className = destination ? 'experience-link' : 'experience-link-status';
+        element.textContent = destination ? destination.label : unavailableLabel;
+        if (destination) element.href = destination.href;
+        current.replaceWith(element);
     }
 
     getRotationData() {
