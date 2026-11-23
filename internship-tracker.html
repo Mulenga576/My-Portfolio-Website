@@ -4,40 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Internship Progress Tracker</title>
+  <link rel="stylesheet" href="css/datasilence-refresh.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
   <meta name="description" content="Track my internship journey at UWC Zambia with weekly progress updates and goals.">
 </head>
-<body>
-  <header class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">Internship Journey</div>
-      <h1 class="glowing-text">Crafting Digital Excellence<br><span class="highlight">At UWC Zambia</span></h1>
-      <div class="divider"></div>
-      <h2 class="subtitle">From Concept to Creation: My 12-Week Web Development Odyssey</h2>
-      <p class="welcome-message">
-        <span class="quote-icon">"</span>
-        Join me as I navigate the exciting world of web development, transforming ideas into impactful digital solutions. 
-        This interactive journal documents my daily progress, challenges overcome, and skills mastered during my internship at UWC Zambia.
-      </p>
-      <div class="cta-buttons">
-        <a href="#week-1" class="btn btn-primary" id="begin-journey">Explore My Journey</a>
-        <a href="#contact-section" class="btn btn-outline" id="contact-btn">Get in Touch</a>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll to Explore</span>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 5v14M19 12l-7 7-7-7"/>
-      </svg>
+<body id="top">
+  <a class="skip-link" href="#journal">Skip to journal</a>
+  <header class="journal-hero">
+    <div class="container">
+      <a class="journal-home" href="index.html">← Back to portfolio</a>
+      <h1>Crafting Digital Excellence at UWC Zambia</h1>
+      <p class="journal-subtitle">From Concept to Creation: My 12-Week Web Development Odyssey</p>
+      <p class="welcome-message">This interactive journal documents my daily progress, challenges overcome, and skills mastered during my internship at UWC Zambia.</p>
+      <nav class="actions" aria-label="Journal navigation">
+        <a href="#week-1" class="button button-primary">Explore My Journey</a>
+        <a href="#contact-section" class="button">Get in Touch</a>
+      </nav>
     </div>
   </header>
 
-  <main class="log-container">
-
+  <main id="journal" class="container log-container" tabindex="-1">
     <section id="week-1" class="week-section">
       <div class="week-header">
-        <h2>📘 Week 1: Learn HTML & CSS (3–6 June)</h2>
+        <h2>Week 1: Learn HTML & CSS (3–6 June)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -109,7 +99,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>🚀 Week 2: Planning & Setup (10–14 June)</h2>
+        <h2>Week 2: Planning & Setup (10–14 June)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -181,7 +171,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>✨ Week 3: Finalize Designs (17–21 June)</h2>
+        <h2>Week 3: Finalize Designs (17–21 June)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -253,7 +243,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>🧱 Week 4: Build Static Layout (24–28 June)</h2>
+        <h2>Week 4: Build Static Layout (24–28 June)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -325,7 +315,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>⚡ Week 5: Add Interactivity (1–5 July)</h2>
+        <h2>Week 5: Add Interactivity (1–5 July)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -396,7 +386,7 @@
     </section>
 
     <section class="week-section">
-      <h2>🗃️ Week 6: Database Design (7–11 July)</h2>
+      <h2>Week 6: Database Design (7–11 July)</h2>
       <div class="log-entry">
         <ul>
           <li><strong>Designed</strong> scalable database schema</li>
@@ -408,7 +398,7 @@
     </section>
 
     <section class="week-section">
-      <h2>🔌 Week 7: Backend Integration (14–18 July)</h2>
+      <h2>Week 7: Backend Integration (14–18 July)</h2>
       <div class="log-entry">
         <ul>
           <li><strong>Connected</strong> frontend to backend services</li>
@@ -420,7 +410,7 @@
     </section>
 
     <section class="week-section">
-      <h2>🔍 Week 8: Filters and Search (21–25 July)</h2>
+      <h2>Week 8: Filters and Search (21–25 July)</h2>
       <div class="log-entry">
         <ul>
           <li><strong>Developed</strong> advanced search functionality</li>
@@ -432,7 +422,7 @@
     </section>
 
     <section class="week-section">
-      <h2>🧪 Week 9: Testing & Debugging (28 July – 1 August)</h2>
+      <h2>Week 9: Testing & Debugging (28 July – 1 August)</h2>
       <div class="log-entry">
         <ul>
           <li><strong>Performed</strong> comprehensive cross-browser testing</li>
@@ -444,7 +434,7 @@
     </section>
 
     <section class="week-section">
-      <h2>🚀 Week 10: Final Polish & Launch (4–8 August)</h2>
+      <h2>Week 10: Final Polish & Launch (4–8 August)</h2>
       <div class="log-entry">
         <ul>
           <li><strong>Implemented</strong> final design refinements</li>
@@ -457,9 +447,9 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>🔧 Week 6: Backend Integration (8–12 July)</h2>
+        <h2>Week 6: Backend Integration (8–12 July)</h2>
       </div>
-      <div class="week-days
+      <div class="week-days">
         <div class="day-card">
           <div class="day-header">
             <h3 class="day-name">Monday</h3>
@@ -529,7 +519,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>📱 Week 7: Mobile Optimization (15–19 July)</h2>
+        <h2>Week 7: Mobile Optimization (15–19 July)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -601,7 +591,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>🔍 Week 8: Testing & QA (22–26 July)</h2>
+        <h2>Week 8: Testing & QA (22–26 July)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -673,7 +663,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>🚀 Week 9: Performance Optimization (29 July–2 August)</h2>
+        <h2>Week 9: Performance Optimization (29 July–2 August)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -745,7 +735,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>🔒 Week 10: Security & Compliance (5–9 August)</h2>
+        <h2>Week 10: Security & Compliance (5–9 August)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -817,7 +807,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>🧩 Week 11: Polish UI and Content (12–16 August)</h2>
+        <h2>Week 11: Polish UI and Content (12–16 August)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -889,7 +879,7 @@
 
     <section class="week-section">
       <div class="week-header">
-        <h2>🚀 Week 12: Final Review & Handover (19–23 August)</h2>
+        <h2>Week 12: Final Review & Handover (19–23 August)</h2>
       </div>
       <div class="week-days">
         <div class="day-card">
@@ -960,26 +950,17 @@
     </section>
   </main>
 
-  <footer id="contact-section">
-    <div class="social-links">
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a href="https://wa.me/+1 585 414 4776" target="_blank" rel="noopener noreferrer" class="social-link">
-        <i class="fab fa-whatsapp"></i> WhatsApp
-      </a>
-      <a href="https://www.linkedin.com/in/silence-mpikula-24a559335/" target="_blank" rel="noopener noreferrer" class="social-link">
-        <i class="fab fa-twitter"></i> LinkedIn
-      </a>
-      <a href="https://www.facebook.com/john.mulenga.35977/" target="_blank" rel="noopener noreferrer" class="social-link">
-        <i class="fab fa-facebook"></i> Facebook
-      </a>
+  <footer id="contact-section" class="journal-footer">
+    <div class="container">
+      <ul class="inline-links" aria-label="Contact links">
+        <li><a href="https://wa.me/15854144776">WhatsApp</a></li>
+        <li><a href="https://www.linkedin.com/in/silence-mpikula-24a559335/">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/john.mulenga.35977/">Facebook</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+      <p>Built by Mulenga Mpikula Silence | UWC Zambia Internship</p>
     </div>
-    <p>Built by Mulenga Mpikula Silence | UWC Zambia Internship</p>
   </footer>
-  <!-- Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
-  

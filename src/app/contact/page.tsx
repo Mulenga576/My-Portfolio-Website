@@ -35,8 +35,7 @@ export default function ContactPage() {
             name: formData.name,
             email: formData.email,
             message: formData.message,
-            subject: formData.subject || 'New Contact Form Submission',
-            status: 'new'
+            subject: formData.subject || 'New Contact Form Submission'
           },
         ]);
 

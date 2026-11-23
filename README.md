@@ -1,131 +1,35 @@
-# Mulenga Mpikula Silence - Portfolio Website
+# DataSilence Portfolio
 
-A modern portfolio website built with Next.js, TypeScript, Tailwind CSS, and Supabase, showcasing my skills, projects, and professional experience.
+Mulenga Mpikula Silence’s portfolio at [datasilence.tech](https://datasilence.tech/). The personalized site starts at the repository’s `index.html`. The internship tracker lives in `internship-tracker.html`.
 
-## ✨ Features
+## Local preview
 
-- 🚀 Blazing fast performance with Next.js 14
-- 🎨 Beautiful UI with Tailwind CSS
-- 📱 Fully responsive design
-- 📝 Contact form with Supabase backend
-- 🔍 SEO optimized
-- 🔄 Real-time updates
-- 🔒 Secure authentication (if enabled)
-- ⚡ Performance optimized
-- 🎨 Smooth animations and transitions
+With Node.js 18+ and Python 3 installed, run these commands from the repository root.
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18.x or later
-- npm or yarn
-- Supabase account (for the backend)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/your-portfolio.git
-   cd your-portfolio
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-### Firebase Setup
-
-1. Go to the [Firebase Console](https://console.firebase.google.com/)
-2. Create a new project
-3. Enable Firestore Database
-4. Go to Project Settings > General > Your Apps
-5. Click the web icon (</>) to register your app
-6. Copy the Firebase configuration object
-7. Create a new file `js/firebase-config.js` with your Firebase configuration
-
-### Environment Variables
-
-Create a `.env` file in the root directory and add your Firebase configuration:
-
-```env
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```sh
+node scripts/build-portfolio.mjs
+python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
-### Development
+Open `http://127.0.0.1:8000/`. Open `/internship-tracker.html` for the tracker. Use **Request CV** to reach the contact form. The archived PDF remains in the source tree and is excluded from the static build because its degree information is superseded.
 
-To run the development server:
+## Netlify
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+The published production deploy for commit `56904ba` on `main` exposes the checked-in Next.js export at `/out/index.html` alongside the personalized site. Netlify's dashboard and the published deploy log confirm the current settings. [Build settings](https://app.netlify.com/projects/effortless-dieffenbachia-671e33/configuration/developer-settings#build-settings) · [Production deploy](https://app.netlify.com/projects/effortless-dieffenbachia-671e33/deploys/68c217e5462fbf00085d96c3)
 
-### Building for Production
+| Setting | Current production | Proposed in `netlify.toml` |
+| --- | --- | --- |
+| Base directory | Repository root (`/` in the dashboard) | Repository root |
+| Build command | Unset | `node scripts/build-portfolio.mjs` |
+| Publish directory | Repository root (`/` in the deploy log) | `dist` |
+| Homepage | Root `index.html` | `dist/index.html`, copied from the repository root |
 
-To create a production build:
+The proposed build recreates `dist` from the portfolio pages and their assets and sets `NETLIFY_NEXT_PLUGIN_SKIP`. It excludes the Next.js export and application, environment files, and database scripts. To develop the older Next.js demo, install dependencies, set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in `.env.local`, and run `npm run dev`.
 
-```bash
-npm run build
-# or
-yarn build
-```
+## Contact form
 
-## 🛠️ Technologies Used
+The browser initializes Supabase with its project URL and public anon key in `index.html`. To point a local copy at a different project, update those two values together using that project’s public anon key. Keep service-role credentials on the server.
 
-- HTML5, CSS3, JavaScript (ES6+)
-- Firebase (Authentication, Firestore, Hosting)
-- [Font Awesome](https://fontawesome.com/) for icons
-- [Google Fonts](https://fonts.google.com/) for typography
-- [AOS](https://michalsnik.github.io/aos/) for scroll animations
+The production contact form inserts `name`, `email`, `subject`, and `message` into `public.contact_submissions`. The database assigns the default `status` of `new`. Public visitors have insert-only access. The client requests no returned records and makes no read query against that table. The static build does not require Supabase credentials in Netlify environment variables.
 
-## 🔧 Project Structure
-
-```
-portfolio/
-├── assets/               # Static assets
-│   ├── images/           # Image files
-│   └── fonts/            # Custom fonts
-├── css/                  # Stylesheets
-│   ├── styles.css        # Global styles
-│   └── portfolio-styles.css # Portfolio page styles
-├── js/                   # JavaScript files
-│   ├── firebase-config.js # Firebase configuration
-│   ├── contact-form.js   # Contact form handling
-│   ├── portfolio-clean.js # Portfolio page scripts
-│   └── script.js         # Main JavaScript file
-├── index.html            # Home page
-├── portfolio.html        # Portfolio page
-└── README.md             # This file
-```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Font Awesome](https://fontawesome.com/) for the beautiful icons
-- [Google Fonts](https://fonts.google.com/) for the typography
-- [AOS](https://michalsnik.github.io/aos/) for the smooth scroll animations
-- [Firebase](https://firebase.google.com/) for the backend services
-
-## 📬 Contact
-
-- Email: mpsilence1@gmail.com
-- LinkedIn: [Silence Mpikula](https://www.linkedin.com/in/silence-mpikula-24a559335/)
-- GitHub: [Mulenga576](https://github.com/Mulenga576)
-
----
-
-Made with ❤️ by Mulenga Mpikula Silence
+Use a test project to verify form delivery or arrange an approved production test. The historical SQL and direct database test scripts in this repository predate the current production access rules.

@@ -1,0 +1,9 @@
+"$schema" = "https://open-api.netlify.com/netlify.schema.json"
+
+[build]
+  base = "."
+  command = "node scripts/build-portfolio.mjs"
+  publish = "dist"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"

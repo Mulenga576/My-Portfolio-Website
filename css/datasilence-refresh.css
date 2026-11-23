@@ -1,0 +1,90 @@
+/* Shared portfolio and journal styles. */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #64748b;
+  --muted: #475569;
+  --dark: #111827;
+  --light: #f7f7f4;
+  --surface: #fff;
+  --line: #dde3e9;
+  --control-border: #8794a5;
+  --tint: #edf3ff;
+  --radius: 12px;
+  --shadow: 0 3px 12px rgb(17 24 39 / 5%);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 5rem; }
+body {
+  margin: 0;
+  background: var(--light);
+  color: var(--dark);
+  font: 1rem/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+[hidden] { display: none !important; }
+img { display: block; max-width: 100%; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+a { color: var(--primary-dark); text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+h1, h2, h3, p, blockquote, ul, dl, dd { margin: 0; }
+h1, h2, h3 { line-height: 1.17; }
+h2 { font-size: clamp(1.65rem, 3.4vw, 2.25rem); letter-spacing: -.04em; }
+h3 { font-size: 1.12rem; letter-spacing: -.025em; }
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - 2.5rem, 70rem);
+  margin-inline: auto;
+}
+.skip-link {
+  position: fixed;
+  z-index: 5;
+  top: .5rem;
+  left: .5rem;
+  padding: .55rem .9rem;
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: none; }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: .5rem .85rem;
+  border: 1px solid var(--control-border);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--dark);
+  font-size: .875rem;
+  font-weight: 650;
+  text-decoration: none;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.button:hover { background: var(--tint); border-color: var(--primary); }
+.button-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.button-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+.button:disabled { cursor: wait; opacity: .75; }
+
+.actions, .inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .55rem .75rem;
+}
+.inline-links { padding: 0; list-style: none; }
+.inline-links a { display: inline-block; padding-block: .25rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
