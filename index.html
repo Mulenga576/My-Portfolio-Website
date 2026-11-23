@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mulenga Mpikula Silence - Portfolio</title>
-  <meta name="description" content="Mulenga Mpikula Silence, a BS Data Science student and Mathematics minor at the University of Rochester. Selected software and analytics work.">
+  <meta name="description" content="Mulenga Mpikula Silence, a BS Data Science student and Mathematics minor at the University of Rochester. Selected work in data science, finance and software engineering.">
   <link rel="stylesheet" href="css/datasilence-refresh.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
@@ -22,6 +22,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#portfolio">My Work</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="mobile-cv"><a href="#contact">Request CV</a></li>
@@ -36,16 +37,15 @@
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1>Mulenga Mpikula Silence</h1>
-          <p class="hero-intro">BS Data Science student and Mathematics minor at the University of Rochester. I’m interested in practical applications of data, AI, and software engineering.</p>
+          <p class="hero-intro">I study Data Science and minor in Mathematics at the University of Rochester. I’m interested in how data, AI and software can help people make better decisions about money, work and everyday problems.</p>
           <div class="actions">
             <a href="#projects" class="button button-primary">View Projects <span aria-hidden="true">→</span></a>
             <a href="#about" class="button button-inverse">About Me</a>
           </div>
-          <ul class="hero-focus" aria-label="Areas of focus">
-            <li>Data Science</li>
-            <li>Software Engineering</li>
-            <li>Analytics</li>
-          </ul>
+          <figure class="hero-quote">
+            <blockquote>“If your actions inspire others to dream more, learn more, do more and become more, you are a leader.”</blockquote>
+            <figcaption>Often attributed to John Quincy Adams</figcaption>
+          </figure>
         </div>
       </div>
     </header>
@@ -54,7 +54,7 @@
       <section id="about" tabindex="-1" class="panel" aria-labelledby="about-title">
         <h2 id="about-title" class="panel-title">About Me</h2>
         <div class="about-layout">
-          <p>I study Data Science at the University of Rochester with a minor in Mathematics. My projects span web development and business analytics, from a vehicle financing platform to a dashboard that tracks sales and expenses.</p>
+          <p>I like starting with questions people need answers to. How close is a driver to owning their car? What is driving a business’s profit? Finance gives me the questions, and data science and software give me ways to work through them. That same curiosity draws me to applied AI, including early crop disease detection.</p>
           <dl class="profile-details">
             <dt>University of Rochester</dt>
             <dd>BS Data Science</dd>
@@ -68,26 +68,38 @@
         <div class="toolkit">
           <div class="toolkit-row">
             <h3>Data &amp; Analytics</h3>
-            <ul class="chips"><li>Python</li><li>SQL</li><li>Chart.js</li><li>Data Visualization</li></ul>
+            <ul class="chips"><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#python"></use></svg>Python</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#database"></use></svg>SQL</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#chartdotjs"></use></svg>Chart.js</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#analytics"></use></svg>Data Visualisation</li></ul>
           </div>
           <div class="toolkit-row">
             <h3>Web Development</h3>
-            <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li></ul>
+            <ul class="chips"><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#html5"></use></svg>HTML</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#css3"></use></svg>CSS</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#javascript"></use></svg>JavaScript</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#typescript"></use></svg>TypeScript</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#react"></use></svg>React</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#nextdotjs"></use></svg>Next.js</li></ul>
           </div>
           <div class="toolkit-row">
             <h3>Tools &amp; Platforms</h3>
-            <ul class="chips"><li>PostgreSQL</li><li>Supabase</li><li>Git &amp; GitHub</li><li>Netlify</li></ul>
+            <ul class="chips"><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#postgresql"></use></svg>PostgreSQL</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#supabase"></use></svg>Supabase</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#github"></use></svg>Git &amp; GitHub</li><li><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#netlify"></use></svg>Netlify</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="finance" tabindex="-1" class="panel finance-panel" aria-labelledby="finance-title">
+        <h2 id="finance-title" class="panel-title">Finance &amp; Business Analytics</h2>
+        <div class="finance-grid">
+          <div>
+            <h3>Financial Modelling</h3>
+            <p>I’m interested in how payment schedules and repayment risk shape access to vehicle ownership. Drive2Own is where I’ve explored those questions through payment and ownership tracking.</p>
+          </div>
+          <div>
+            <h3>Data Analysis</h3>
+            <p>I use charts and dashboards to make sales, expenses and profit easier to compare. The Business Intelligence Dashboard shows how those measures can sit together in one view.</p>
           </div>
         </div>
       </section>
 
       <section id="projects" tabindex="-1" class="panel" aria-labelledby="projects-title">
         <h2 id="projects-title" class="panel-title">Featured Projects</h2>
-        <div id="portfolio" class="project-grid">
+        <div class="project-grid">
           <article class="project-card">
-            <div class="project-cover mobility-cover" aria-hidden="true">
-              <span class="project-mark">D2O</span>
-            </div>
+            <img class="project-cover drive-preview" src="assets/images/drive2own-public-home.jpg" alt="Public Drive2Own landing page introducing the vehicle ownership programme" width="1464" height="620" loading="lazy" decoding="async">
             <div class="project-content">
               <h3>Drive2Own</h3>
               <p>A lease-to-own vehicle platform for taxi drivers in Zambia, with payment tracking and separate driver and administrator dashboards.</p>
@@ -96,9 +108,10 @@
             </div>
           </article>
           <article class="project-card">
-            <div class="project-cover agr-cover" aria-hidden="true">
-              <span class="project-mark">AGR</span>
-            </div>
+            <figure class="project-image">
+              <img class="project-cover" src="assets/images/agricultural-fields-nasa.jpg" alt="Agricultural fields in Brazil photographed from the International Space Station" width="1000" height="678" loading="lazy" decoding="async">
+              <figcaption><a href="https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?frame=25373&amp;mission=ISS026&amp;roll=E">Context image · NASA</a></figcaption>
+            </figure>
             <div class="project-content">
               <h3>AGR Sensors</h3>
               <p>Announced AI engineering internship focused on early crop disease detection.</p>
@@ -107,14 +120,51 @@
             </div>
           </article>
           <article class="project-card">
-            <img class="project-cover dashboard-preview" src="assets/images/empire-tracker-dashboard.png" alt="Empire Tracker dashboard with sales and expense visualizations" loading="lazy" decoding="async">
+            <img class="project-cover dashboard-preview" src="assets/images/empire-tracker-dashboard.png" alt="Business dashboard with sales and expense visualisations" loading="lazy" decoding="async">
             <div class="project-content">
-              <h3>Empire Tracker</h3>
-              <p>A business intelligence dashboard for tracking sales, expenses, and profit.</p>
+              <h3>Business Intelligence Dashboard</h3>
+              <p>A dashboard for tracking sales, expenses and profit.</p>
               <ul class="chips"><li>Business Intelligence</li><li>Financial Analytics</li></ul>
               <a class="project-link" href="https://sage-mooncake-0a475c.netlify.app/">View dashboard <span aria-hidden="true">↗</span></a>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section id="portfolio" tabindex="-1" class="panel gallery-panel" aria-labelledby="portfolio-title">
+        <h2 id="portfolio-title" class="panel-title">My Work</h2>
+        <div class="work-gallery">
+          <div class="gallery-controls" role="group" aria-label="Gallery controls" hidden>
+            <button type="button" class="button" data-gallery-step="-1" aria-controls="gallery-slides">Previous image</button>
+            <p class="gallery-status" role="status">1 of 3 · Drive2Own</p>
+            <button type="button" class="button" data-gallery-step="1" aria-controls="gallery-slides">Next image</button>
+          </div>
+          <div id="gallery-slides">
+          <figure class="work-slide" data-slide-title="Drive2Own">
+            <img src="assets/images/drive2own-public-home.jpg" alt="Drive2Own public page" loading="lazy" decoding="async">
+            <figcaption>
+              <h3>Drive2Own</h3>
+              <p>The lease-to-own programme’s public landing page.</p>
+              <a class="project-link" href="https://drive2own.netlify.app/">Visit Drive2Own <span aria-hidden="true">→</span></a>
+            </figcaption>
+          </figure>
+          <figure class="work-slide" data-slide-title="Business Intelligence Dashboard" hidden>
+            <img src="assets/images/empire-tracker-dashboard.png" alt="Business Intelligence Dashboard public page" loading="lazy" decoding="async">
+            <figcaption>
+              <h3>Business Intelligence Dashboard</h3>
+              <p>Sales, expenses and profit in the working dashboard.</p>
+              <a class="project-link" href="https://sage-mooncake-0a475c.netlify.app/">View dashboard <span aria-hidden="true">→</span></a>
+            </figcaption>
+          </figure>
+          <figure class="work-slide" data-slide-title="UWC Zambia" hidden>
+            <img src="assets/images/uwc-zambia-public-home.jpg" alt="UWC Zambia public page" loading="lazy" decoding="async">
+            <figcaption>
+              <h3>UWC Zambia</h3>
+              <p>The current public website of the national committee, alongside my internship journal.</p>
+              <a class="project-link" href="internship-tracker.html">Read the internship journal <span aria-hidden="true">→</span></a>
+            </figcaption>
+          </figure>
+          </div>
         </div>
       </section>
 
@@ -148,10 +198,10 @@
         <div>
           <h2 id="contact-title">Let’s Build Something</h2>
           <p>I’m open to internships, research collaborations, and software or data projects.</p>
-          <ul class="inline-links" aria-label="Contact and social profiles">
-            <li><a href="mailto:mpsilence1@gmail.com">Email</a></li>
-            <li><a href="https://github.com/Mulenga576">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/silencempikula">LinkedIn</a></li>
+          <ul class="inline-links social-links" aria-label="Contact and social profiles">
+            <li><a href="mailto:mpsilence1@gmail.com"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#email"></use></svg>Email</a></li>
+            <li><a href="https://github.com/Mulenga576"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#github"></use></svg>GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/silencempikula"><svg class="ui-icon" aria-hidden="true" focusable="false"><use href="assets/toolkit-icons.svg#linkedin"></use></svg>LinkedIn</a></li>
           </ul>
         </div>
           <form class="contact-form" method="post">

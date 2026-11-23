@@ -69,21 +69,21 @@
 .hero { position: relative; isolation: isolate; overflow: hidden; }
 .hero-portrait {
   position: absolute;
-  inset: 0 max(7%, calc((100% - 86rem) / 2)) 0 auto;
+  inset: 0 max(3%, calc((100% - 86rem) / 2)) 0 auto;
   z-index: -2;
-  width: min(51%, 30rem);
+  width: min(47%, 38rem);
   height: 100%;
   object-fit: cover;
-  object-position: 50% 7%;
+  object-position: 51% 21%;
   filter: saturate(.8) brightness(.94);
-  mask-image: linear-gradient(90deg, transparent, #000 15% 87%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 24% 90%, transparent);
 }
 .hero::before {
   position: absolute;
   inset: 0;
   z-index: -1;
   content: '';
-  background: linear-gradient(90deg, #151d24 35%, rgb(21 29 36 / 94%) 42%, rgb(21 29 36 / 40%) 62%, transparent 86%);
+  background: linear-gradient(90deg, #151d24 36%, rgb(21 29 36 / 92%) 48%, rgb(21 29 36 / 26%) 68%, transparent 88%), linear-gradient(0deg, rgb(21 29 36 / 48%), transparent 44%);
 }
 .hero-inner {
   display: flex;
@@ -107,18 +107,17 @@
   color: var(--soft-text);
   font-size: clamp(.98rem, 1.4vw, 1.15rem);
 }
-.hero .actions, .hero-focus { padding-left: 1.3rem; }
+.hero .actions { padding-left: 1.3rem; }
 .hero .button { gap: .55rem; padding-inline: 1rem; }
-.hero-focus {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .35rem .8rem;
-  margin-top: 1rem;
+.hero-quote {
+  max-width: 51ch;
+  margin: 1.2rem 0 0 1.3rem;
+  padding-left: .75rem;
+  border-left: 1px solid #86c5ff;
   color: var(--soft-text);
-  font-size: .83rem;
-  list-style: none;
+  font-size: .9rem;
 }
-.hero-focus li + li { padding-left: .8rem; border-left: 1px solid #677785; }
+.hero-quote figcaption { margin-top: .15rem; font-size: .78rem; }
 
 .panel-grid {
   display: grid;
@@ -176,6 +175,24 @@
 }
 .toolkit .chips li { font-size: .83rem; }
 
+.ui-icon { width: 1rem; height: 1rem; flex-shrink: 0; fill: currentColor; }
+.toolkit .chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: .36rem;
+  padding: .19rem .48rem;
+}
+.toolkit .ui-icon { color: var(--primary-dark); }
+.finance-panel, #projects, .gallery-panel, #experience { grid-column: 1 / -1; }
+.finance-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+.finance-grid > div {
+  padding: .8rem 1rem;
+  border-left: 2px solid #aac5eb;
+  background: #f6f8fb;
+  border-radius: 0 7px 7px 0;
+}
+.finance-grid p { margin-top: .3rem; color: var(--muted); font-size: .94rem; }
+
 .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
 .project-card {
   display: flex;
@@ -190,20 +207,24 @@
   display: grid;
   place-items: center;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   background: #dfe7ee;
 }
-.project-mark {
-  padding-left: .2em;
-  color: #f8fafc;
-  font-size: clamp(1.1rem, 2.25vw, 2rem);
-  font-weight: 760;
-  letter-spacing: .2em;
+.project-image { position: relative; margin: 0; }
+.project-image figcaption {
+  position: absolute;
+  right: .4rem;
+  bottom: .4rem;
+  padding: .18rem .45rem;
+  border-radius: 5px;
+  background: var(--dark);
+  font-size: .73rem;
 }
-.mobility-cover { background: linear-gradient(135deg, #1e364c, #354c63); }
-.agr-cover { background: linear-gradient(135deg, #243d37, #3b5550); }
-.dashboard-preview { object-fit: contain; }
+.project-image figcaption a { color: #f8fafc; }
+.drive-preview, .dashboard-preview { object-fit: contain; background: #eef1f5; }
+.dashboard-preview { background: #151d24; }
 .project-content {
   display: flex;
   flex: 1;
@@ -214,6 +235,40 @@
 .project-content h3 { font-size: 1rem; }
 .project-content p { color: var(--muted); font-size: .93rem; line-height: 1.55; }
 .project-link { display: inline-flex; align-items: center; gap: .25rem; min-height: 44px; margin-top: auto; font-size: .87rem; font-weight: 650; }
+
+.gallery-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .45rem .75rem;
+  margin-bottom: .75rem;
+}
+.gallery-controls .button { min-height: 44px; }
+.gallery-status { color: var(--muted); font-size: .88rem; font-weight: 650; }
+.work-slide {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+.work-slide img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #e8eef4;
+  object-fit: contain;
+}
+.work-slide figcaption { padding: .55rem; }
+.work-slide p { margin-top: .4rem; color: var(--muted); font-size: .94rem; }
+.social-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: .42rem;
+}
 
 .timeline {
   display: grid;
@@ -295,10 +350,6 @@
 
 @media (max-width: 1080px) {
   .about-layout { grid-template-columns: 1fr; gap: .65rem; }
-  .project-grid { grid-template-columns: 1fr; }
-  .project-card { display: grid; grid-template-columns: minmax(5.5rem, 32%) minmax(0, 1fr); }
-  .project-cover { height: 100%; }
-  .dashboard-preview { object-fit: cover; }
 }
 
 @media (max-width: 720px) {
@@ -324,7 +375,9 @@
   .hero-copy { width: 78%; }
   .hero-portrait { right: 0; width: 72%; object-position: 55% 24%; mask-image: none; }
   .hero::before { background: linear-gradient(90deg, #151d24 18%, rgb(21 29 36 / 90%) 38%, rgb(21 29 36 / 58%) 76%, rgb(21 29 36 / 16%)); }
-  .panel-grid, .contact-layout { grid-template-columns: 1fr; }
+  .panel-grid, .contact-layout, .finance-grid, .project-grid, .work-slide { grid-template-columns: 1fr; }
+  .work-slide { gap: .4rem; }
+  .work-slide figcaption { padding: .2rem 0; }
 }
 
 @media (min-width: 1081px) {
@@ -332,7 +385,7 @@
   .panel-grid { gap: 1rem; padding-block: 1.15rem 1.45rem; }
   .panel { padding: 1.4rem; }
   .toolkit { gap: .75rem; }
-  .project-cover { aspect-ratio: 3 / 2; }
+  .project-cover { aspect-ratio: 16 / 8; }
   .project-content { gap: .6rem; padding: .85rem; }
   .timeline { gap: 1rem; }
   .timeline > li { padding-bottom: .95rem; }
@@ -344,8 +397,8 @@
   .hero-portrait { width: 100%; object-position: 56% 26%; }
   .hero::before { background: linear-gradient(90deg, rgb(21 29 36 / 98%), rgb(21 29 36 / 85%) 65%, rgb(21 29 36 / 66%)); }
   .hero h1 { font-size: clamp(2.15rem, 9vw, 2.6rem); }
-  .hero-intro, .hero .actions, .hero-focus { margin-left: 0; padding-left: 0; }
-  .hero-focus { gap: .3rem .47rem; }
-  .hero-focus li + li { padding-left: .47rem; }
+  .hero-intro, .hero .actions { margin-left: 0; padding-left: 0; }
+  .hero-quote { margin-left: 0; }
+  .gallery-status { order: -1; flex-basis: 100%; }
   .form-row { grid-template-columns: 1fr; }
 }

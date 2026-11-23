@@ -31,4 +31,36 @@ navigation.addEventListener('keydown', (event) => {
   menu.focus();
 });
 
+const gallery = document.querySelector('.work-gallery');
+const galleryControls = gallery.querySelector('.gallery-controls');
+const slides = [...gallery.querySelectorAll('.work-slide')];
+const galleryStatus = gallery.querySelector('.gallery-status');
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides[currentSlide].hidden = true;
+  currentSlide = (index + slides.length) % slides.length;
+  const slide = slides[currentSlide];
+  slide.hidden = false;
+  galleryStatus.textContent = `${currentSlide + 1} of ${slides.length} · ${slide.dataset.slideTitle}`;
+}
+
+galleryControls.hidden = false;
+galleryControls.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-gallery-step]');
+  if (button) showSlide(currentSlide + Number(button.dataset.galleryStep));
+});
+galleryControls.addEventListener('keydown', (event) => {
+  const destinations = {
+    ArrowLeft: currentSlide - 1,
+    ArrowRight: currentSlide + 1,
+    Home: 0,
+    End: slides.length - 1,
+  };
+  if (!Object.hasOwn(destinations, event.key)) return;
+
+  event.preventDefault();
+  showSlide(destinations[event.key]);
+});
+
 document.getElementById('year').textContent = new Date().getFullYear();
