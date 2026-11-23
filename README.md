@@ -11,7 +11,7 @@ node scripts/build-portfolio.mjs
 python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
-Open `http://127.0.0.1:8000/`. Open `/internship-tracker.html` for the tracker. The CV is served from `/public/downloads/Mulenga%20Mpikula%20Silence%20CV.pdf`.
+Open `http://127.0.0.1:8000/`. Open `/internship-tracker.html` for the tracker. Use **Request CV** to reach the contact form. The archived PDF remains in the source tree and is excluded from the static build because its degree information is superseded.
 
 ## Netlify
 

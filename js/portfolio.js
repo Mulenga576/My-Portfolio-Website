@@ -31,37 +31,4 @@ navigation.addEventListener('keydown', (event) => {
   menu.focus();
 });
 
-const filters = document.querySelector('.filters');
-const filterButtons = [...filters.querySelectorAll('button')];
-const work = document.querySelectorAll('#work-grid [data-categories]');
-filters.hidden = false;
-filters.addEventListener('click', (event) => {
-  const button = event.target.closest('button');
-  if (!button) return;
-
-  const category = button.dataset.filter;
-  filterButtons.forEach((filter) => filter.setAttribute('aria-pressed', String(filter === button)));
-  work.forEach((card) => {
-    card.hidden = category !== 'all' && !card.dataset.categories.split(' ').includes(category);
-  });
-});
-
-document.querySelectorAll('.gallery').forEach((gallery) => {
-  const slides = [...gallery.querySelectorAll('img')];
-  const controls = gallery.querySelector('.gallery-controls');
-  const position = controls.querySelector('.gallery-position');
-  let current = 0;
-
-  controls.hidden = false;
-  controls.addEventListener('click', (event) => {
-    const button = event.target.closest('button[data-step]');
-    if (!button) return;
-
-    slides[current].hidden = true;
-    current = (current + Number(button.dataset.step) + slides.length) % slides.length;
-    slides[current].hidden = false;
-    position.textContent = (current + 1) + ' / ' + slides.length;
-  });
-});
-
 document.getElementById('year').textContent = new Date().getFullYear();
